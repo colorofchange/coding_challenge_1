@@ -26,4 +26,5 @@ The [Django Documentation](https://docs.djangoproject.com/en/3.0/) should have i
   - With docker installed, navigate to the cloned repository and run this command : `docker-compose up --build`
     - Depending on your OS, you may need to (separately install docker-compose)[https://docs.docker.com/compose/install/]. (Mac OS and Windows shouldn't require this step)
   - Navigate to your browser at [http://127.0.0.1](http://127.0.0.1)
+  - Make a new branch with your name, make your changes and submit a new pull request to the repository
   - *Please reach out to us if you can't run Docker on your computer, or run into any errors on trying to run the above command.*
