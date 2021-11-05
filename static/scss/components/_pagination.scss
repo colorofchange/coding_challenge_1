@@ -1,0 +1,14 @@
+/* Pagination */
+
+.pagination {
+  text-align: center;
+  margin: 1rem;
+  a {
+    color: white;
+    margin: 0 0.2rem;
+  }
+}
+
+.current {
+  margin: 0 0.5rem;
+}

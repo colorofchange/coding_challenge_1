@@ -1,0 +1,273 @@
+
+.tagButton-active {
+  color: #fff !important;
+}
+
+.tag_modal {
+  position: absolute;
+  background-color: #4f4f4f;
+  color: #ccc;
+  z-index: 2;
+  top: 7%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0;
+  font-size: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 55%;
+  border: 2px solid #4f4f4f;
+}
+
+.tag {
+  padding: 0.75rem;
+  margin: 0.25rem 0;
+  display: block;
+  font-weight: 501;
+  position: relative;
+  font-size: 15px;
+  color: #fff;
+}
+
+.remove_tag {
+  content: "x";
+  font-family: sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.5em 0.4rem 0.4rem;
+  font-size: 1rem;
+  position: absolute;
+  top: 7px;
+  right: 5px;
+}
+
+.modal {
+  &__wrapper {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0 4rem;
+    justify-content: space-between;
+    &__top {
+      display: flex;
+      flex-direction: column;
+    }
+    &--nav {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__left {
+    background-color: #232323;
+    max-height: 700px;
+    overflow: auto;
+    &-taglist {
+      padding: 0.5rem;
+    }
+    &-tag {
+      list-style: none;
+      padding: 0.5rem;
+      color: #9b9a9a;
+      margin: 0.6rem 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transform: 0.3s;
+    }
+  }
+  &_buttons {
+    margin: 2rem auto;
+  }
+  &__instructions {
+    padding: 1rem;
+    border: 2px dashed #646464;
+    color: #9d9d9d;
+    &--note {
+      font-size: 0.9rem;
+      margin: 2.5rem 0 0;
+      text-align: center;
+    }
+    &--ol {
+      padding-right: 2.5rem;
+      font-weight: 401;
+      font-size: 1.25rem;
+      text-transform: initial;
+      margin: 1rem 0;
+      &--item {
+        margin: 1rem 0;
+      }
+    }
+    &--fulltaglist {
+      color: #232323;
+      text-decoration: underline;
+      transition: 0.3s;
+      &:visited {
+        color: #232323;
+      }
+      &:hover {
+        transition: 0.3s;
+        color: #000;
+      }
+    }
+  }
+}
+
+.searchbox {
+  margin: 0;
+  border: 0 solid;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+
+#active_tagType {
+  margin: 0 auto;
+  color: #ccc;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+.title {
+  margin: 1.5rem auto 0;
+  color: #fff;
+}
+
+#closeModalBtn {
+  margin: auto 5rem;
+  border-radius: 0;
+  border: none;
+  padding: 0.5rem 0.1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff5e;
+}
+
+.tag_field,
+.subject_hidden_field {
+  display: none !important;
+}
+
+.activeTag {
+  color: #fff !important;
+}
+
+.search__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+#currentlySelected {
+  padding: 0;
+  margin: 1rem 0;
+}
+
+#saveCloseModal {
+  border-radius: 0;
+  border: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #9d9d9d;
+  margin: 0 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+#openTagModal {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  text-transform: unset;
+  font-weight: bold;
+  border-radius: 0;
+  transition: 0.3s;
+  background-color: #4f4f4f;
+  color: #e8e8e8;
+  cursor: pointer;
+  border: 0;
+  border-left: 7px solid #f8f8f8;
+  &:hover {
+    transition: 0.3s;
+    background-color: #8f8f8f;
+    color: #fff;
+  }
+}
+
+.ui-autocomplete {
+  max-height: 22rem;
+  overflow: auto;
+}
+
+#customTag {
+  display: block;
+  background-color: #fff;
+  margin: 0.1rem 0;
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: #333;
+  text-transform: capitalize;
+  font-style: italic;
+  cursor: pointer;
+  border: 1px solid transparent;
+  &:hover {
+    background-color: #007fff;
+    border: 1px solid #003eff;
+    font-weight: normal;
+    color: #fff;
+  }
+}
+
+.OWN_tag {
+  background-color: #f9594d;
+}
+
+.HELP_tag {
+  background-color: #ff7040;
+}
+
+.DEPT_tag {
+  background-color: #e2af07;
+}
+
+.I_tag {
+  background-color: #589f42;
+}
+
+.ASK_tag {
+  background-color: #38a5d6;
+}
+
+.ENT_tag {
+  background-color: #8b86ca;
+}
+
+.TGT_tag {
+  background-color: #be83e4;
+}
+
+.CAMP_tag {
+  background-color: #a0866d;
+}
+
+.OTH_tag {
+  background-color: #a3afb5;
+}

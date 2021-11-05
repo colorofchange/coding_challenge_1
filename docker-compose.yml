@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: stout_db
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+  web:
+    env_file:
+      - .env
+    container_name: stout
+    environment:
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_HOST=db
+    build: .
+    command: bash -c "python manage.py migrate &&
+      python manage.py loaddata auth.json &&
+      python manage.py loaddata fixture.json &&
+      python manage.py loaddata tags.json &&
+      python manage.py loaddata mailing.json &&
+      python manage.py create_groups &&
+      npm install -g typescript &&
+      npm install &&
+      tsc &&
+      python manage.py runserver 0:80 &&
+      python manage.py shell < helpers/import_tags.py"
+
+    volumes:
+      - .:/code
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - db

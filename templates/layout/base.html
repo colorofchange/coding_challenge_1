@@ -1,0 +1,58 @@
+{% load static %}
+{% load sass_tags %}
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KGXC7P9');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <title>Stout | Build Stronger Emails</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'images/fav.ico' %}" />
+  <meta name="description" content="Description goes here">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="apple-touch-icon" href="fav.png"> -->
+  <link rel="stylesheet" href="{% static 'jquery-ui-dist/jquery-ui.min.css' %}">
+  <link rel="stylesheet" href="{% static 'magnific-popup/dist/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static '@fortawesome/fontawesome-free/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% sass_src 'scss/main.scss' %}">
+
+  {% block scripts %}
+  <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+  <script src="{% static 'jquery-ui-dist/jquery-ui.min.js' %}"></script>
+  <script src="{% static 'magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static '@fortawesome/fontawesome-free/js/all.min.js' %}"></script>
+  <script src="{% static 'confetti-js/dist/index.min.js' %}"></script>
+  <script type="module" src="{% static 'js/public/scripts.js' %}" defer></script>
+  <!-- <script src="{% static 'confetti-js/dist/index.min.js' %}"></script> -->
+  {% endblock %}
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGXC7P9" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="wrapper">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+
+</html>

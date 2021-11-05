@@ -1,0 +1,260 @@
+#form_wrapper {
+  padding: 1rem 2rem;
+  form {
+    margin: 4rem 0 1rem;
+    background-color: #242424;
+    padding: 1rem 3rem 3rem;
+  }
+  .form__submit {
+    margin: 3rem auto auto;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    background-color: #4f4f4f;
+    color: #e8e8e8;
+    font-weight: bold;
+    border: 0;
+    transition: 0.3s;
+    border-left: 10px solid #e8e8e8;
+    text-align: center;
+    display: block;
+    &:hover {
+      color: #fff;
+      cursor: pointer;
+      background-color: #8f8f8f;
+      transition: 0.3s;
+    }
+  }
+  .subjectGroup {
+    padding: 1rem;
+    border: 1px dashed #4f4f4f;
+    margin: 1rem 0;
+  }
+}
+
+.selection {
+  .navbar {
+    background-color: #242424;
+  }
+}
+
+.html-preview {
+  .template__image {
+    &:hover {
+      background: inherit;
+      border: 2px solid transparent;
+    }
+  }
+}
+
+#id_template {
+  padding: 0.5rem;
+  appearance: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+  width: clamp(24rem, 36.6rem, 80%);
+  cursor: pointer;
+}
+
+#confetti-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.django-ckeditor-widget {
+  width: 100%;
+}
+
+#id_tags {
+  text-transform: uppercase;
+  background: $accent-dark;
+  border: 1px solid $accent-light;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0;
+  width: 10rem;
+}
+
+form input,
+form select,
+form textarea {
+  text-align: left;
+  padding: 0.5rem 0.8rem;
+  color: $accent-dark;
+  border: none;
+  background-color: #c4c4c4;
+  width: clamp(16rem, 35rem, 77%);
+  font-size: 1rem;
+}
+
+#cke_id_body {
+  width: auto !important;
+}
+
+option {
+  background-color: #242424;
+  color: #e8e8e8;
+}
+
+form option {
+  background-color: $accent-light;
+}
+
+form option:checked {
+  border: 2px solid $primary;
+}
+
+#id_approved {
+  width: 25px;
+  height: 25px;
+}
+
+/*  Mailing Edit */
+
+.email-client_navbar {
+  flex-direction: column;
+  display: flex;
+  font-size: 1.1rem;
+  margin: 4rem auto;
+  a {
+    color: #e8e8e8;
+    transition: 0.3s;
+    border-left: 5px solid transparent;
+    &:hover {
+      color: #fff;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+  }
+}
+
+.active {
+  font-weight: bold;
+  color: #fff !important;
+  border: 0;
+  border-left: 5px solid #fa521a !important;
+  padding-left: 0.3rem;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  max-height: 450px;
+  overflow: hidden;
+  height: 450px;
+  object-fit: cover;
+  grid-column: 2;
+  grid-row: 2;
+  &--image {
+    margin: auto;
+    width: clamp(100%, 375px, 100%);
+    max-width: 375px;
+  }
+}
+
+#preview-GMAIL {
+  display: block;
+}
+
+.CTA--queue {
+  margin: 2rem auto;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  background-color: #428e2b;
+  color: $accent-light;
+  border: 3px solid transparent;
+  transition: 0.3s;
+  grid-row: 2;
+  grid-column: 2;
+  &:hover {
+    border-color: $accent-light;
+    transition: 0.3s;
+  }
+}
+
+.mfp-zoom-out-cur {
+  cursor: auto;
+  & .mfp-image-holder .mfp-close {
+    cursor: pointer;
+  }
+}
+
+/*  hide tag and subject hidden fields */
+
+.addDelButtonWrapper,
+[id^="subject-"] {
+  display: block;
+  position: relative;
+}
+
+.activeSubject {
+  display: inline-block !important;
+}
+
+.fa-spinner {
+  font-size: 5rem;
+  margin: 7rem auto 0;
+}
+
+#validation-error-popup {
+  background-color: #fa521a;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 40%;
+  &__button {
+    position: absolute;
+    right: 0.1rem;
+    top: 0.1rem;
+    padding: 0.1rem;
+    font-size: 1rem;
+    background-color: #fa521a;
+    color: inherit;
+    border: none;
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.approval {
+  color: #e8e8e8;
+  &--button:hover {
+    background-color: #757575;
+    transition: 0.3s;
+  }
+}
+
+.mailing__status {
+  grid-row: 3;
+  grid-column: 2;
+  text-align: center;
+  max-width: 375px;
+  letter-spacing: 1.5px;
+  color: #fa521a;
+  padding: 0 0.8rem;
+  box-sizing: border-box;
+  margin: auto;
+  & > p {
+    border: 1px solid #fa521a;
+  }
+}
+
+#save-ak-mailer {
+  background-color: #fa521a;
+  border: 0;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}

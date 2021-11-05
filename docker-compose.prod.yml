@@ -1,0 +1,17 @@
+version: "3.9"
+   
+services:
+  web:
+    env_file:
+      - .env
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=${DB_HOST}
+    command: bash -c "python manage.py migrate && 
+     python manage.py loaddata fixture.json &&
+     python manage.py create_groups &&
+     gunicorn -c gunicorn.config.py stout.wsgi &&
+     tsc &&
+     gulp prod"

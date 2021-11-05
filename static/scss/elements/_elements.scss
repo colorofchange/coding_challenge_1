@@ -1,0 +1,18 @@
+html {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  height: 100%;
+  background-color: $accent-dark;
+}
+
+label {
+  min-width: 80px;
+}

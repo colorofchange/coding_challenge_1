@@ -1,0 +1,41 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{%load template_filters%}
+{% block scripts %}
+    {{ block.super }}
+    <script type="module" src="{% static 'js/public/select-template.js' %}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+{% csrf_token %}
+    <div class="wrapper__left selection">
+        {% block section %}
+            {% include '../components/_navbar.html' %}
+        {% endblock %}
+        <div class="wrapper__left--titles">
+            <p class="wrapper__left--text">Select a template type:</p>
+            <span class="wrapper__left--text-special">
+                <select id="select-template" class="wrapper__left--select">
+                    <option></option>
+                    {% for template_type in templates %}
+                            <option>{{template_type}}</option>
+                    {% endfor %}
+                </select>
+            </span>
+        </div>
+        <a class="logo_wrapper" href="https://colorofchange.org">
+            <img class="logo" src="{% static 'images/logo.png' %}"/>
+        </a>
+    </div>
+
+    <div class="wrapper__right">  
+        
+    <div class ="template__wrapper hide">
+        <div id='nav_buttons'>
+            <p id="prev"> > </p>
+            <p id="next"> > </p>
+        </div> 
+    </div>
+    </div>
+{% endblock %}

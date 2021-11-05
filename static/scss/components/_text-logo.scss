@@ -1,0 +1,19 @@
+.text-logo {
+  color: $primary;
+  margin: 0 0 0 1rem;
+  z-index: 1;
+  padding: 1rem 0;
+  background-color: #121212;
+  left: 0;
+  right: 92%;
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  position: absolute;
+  transition: 0.5s;
+  cursor: pointer;
+  &:hover {
+    color: $accent-light;
+    transition: 0.5s;
+  }
+}

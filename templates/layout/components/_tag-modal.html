@@ -1,0 +1,45 @@
+<div class="modal__wrapper hide">
+  <div class="tag_modal hide">
+      <div class="modal__left">
+          <ul id="taglist" class="modal__left-taglist">
+              <li id="tt_owner" data-tagtype="OWN" data-reqtag="true" class="modal__left-tag activeTag">Owner</li>
+              <li id="tt_helper" data-tagtype="HELP" class="modal__left-tag">Helper</li>
+              <li id="tt_dept" data-tagtype="DEPT" data-reqtag="true" class="modal__left-tag">Dept</li>
+              <li id="tt_issue" data-tagtype="I" data-reqtag="true" class="modal__left-tag">Issue</li>
+              <li id="tt_ask" data-tagtype="ASK" data-reqtag="true" class="modal__left-tag">Ask</li>
+              <li id="tt_entity"  data-tagtype="ENT" data-reqtag="true" class="modal__left-tag">Entity</li>
+              <li id="tt_targeting"  data-tagtype="TGT" data-reqtag="true" class="modal__left-tag">Targeting</li>
+              <li id="tt_camp" data-tagtype="CAMP" data-reqtag="true" class="modal__left-tag">Camp</li>
+              <li id="tt_other"  data-tagtype="OTH" class="modal__left-tag">Other</li> 
+          </ul>
+      </div>
+      <div class="modal__right">
+        <div class="modal__right__top">
+          <h2 class="title">Tag Selection</h2>
+          <h4 id="active_tagType" data-tagtype="OWN" class="">Owner</h4>
+          <div class="search__wrapper">
+            <input id="tag-modal-search" class="searchbox" type="text" placeholder="Search for owner tags" />
+          </div>
+          <div class="modal__instructions">
+            <ol class="modal__instructions--ol">
+              <li class="modal__instructions--ol--item">Select a tag type on the left</li>
+              <li class="modal__instructions--ol--item">Search for a tag with the above search bar</li>
+              <li class="modal__instructions--ol--item">Select the tag(s) you wish to add</li>
+              <li class="modal__instructions--ol--item">Click the add button</li>
+            </ol>
+            <p class="modal__instructions--note">
+              NOTE: The full list of tags can be found 
+              <a class="modal__instructions--fulltaglist" target='_blank' href='https://docs.google.com/spreadsheets/d/1XcosQGeuQ_YfUQm-rt_7In-WAcCSqy_Tdzth7Rv12HM/edit#gid=1546958518'>
+                HERE
+              </a>
+            </p>
+          </div>
+        </div>
+      
+        <div class="modal_buttons">
+            <button id="saveCloseModal">Save & Close</button>
+            <!-- <button id="closeModal">Exit</button> -->
+        </div>
+      </div>
+  </div>
+</div>

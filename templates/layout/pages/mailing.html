@@ -1,0 +1,153 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{%load template_filters%}
+{% block scripts %}
+    {{ block.super }}
+    <script type="module" src="{% static 'js/public/mailing.js' %}" defer></script>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="wrapper__mailing">
+        <canvas id="confetti-holder"></canvas>
+        <div class="wrapper__left" id="form_wrapper" data-mailingid={{form.initial.id}} data-akid={{ak_id}}>
+          {% block section %}
+            {% include '../components/_navbar.html' %}
+          {% endblock %}
+            <form action ="" method ="post">
+                {{template_name}}<br>
+                {% csrf_token %}
+                {{ formset.management_form }}
+                <div class="addDelButtonWrapper">
+                  <span class="addDelButtonWrapper--info">Add or Remove Additional Subject Line & Preview Text Fields</span>
+                  <button type="button" id="add_subjects" class='wrapper__left--addDelButtons'>+</button>
+                  <button type="button" id="delete_subjects"
+                    class='wrapper__left--addDelButtons'>&minus;</button>
+                </div>
+                <div id="form_set">
+                  {% for form in formset.forms %}
+                  <div id="subject-{{ forloop.counter }}" class="subjectGroup">
+                  {% for field in form.visible_fields %}
+                  {% if "DELETE" in field.name %}
+                  <p class="subject_hidden_field">
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                  </p>
+                  {% else %}
+                  <p>
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                  </p>
+                  {% endif %}
+                  {% endfor %}
+                  {% for field in form.hidden_fields %}
+                  <p class="subject_hidden_field">
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                  </p>
+                  {% endfor %}
+                </div>
+                  {% endfor %}
+                </div>
+                <div id="empty_form" style="display:none">
+                  {% for field in formset.empty_form.visible_fields %}
+                  {% if "DELETE" in field.name %}
+                  <p class="subject_hidden_field">
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                  </p>
+                  {% else %}
+                  <p>
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                  </p>
+                  {% endif %}
+                  {% endfor %}
+                  {% for field in formset.empty_form.hidden_fields %}
+                  <p class="subject_hidden_field">
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                  </p>
+                  {% endfor %}
+                </div>
+
+   
+            <hr/>
+                {{form.media}}
+                {% for field in form.visible_fields %}
+                  {% if "tag" in field.name %}
+                    <p class="tag_field">
+                      {{ field.errors }}
+                      {{ field.label_tag }}
+                      {{ field }}
+                    </p>
+                  {% else %}
+                    <p class="input_fields">
+                      {{ field.errors }}
+                      {{ field.label_tag }}
+                      {{ field }}
+                    </p>
+                  {% endif %}
+                {% endfor %}                
+                <button class="form__submit" id="mailing-form">Save to Stout</button>
+            </form>
+
+           <div class='hide' id='validation-error-popup'>
+               <button id='validation-error-popup__button'>X</button>
+               <p><p>
+           </div>
+        </div>
+        {% block modal %}
+          {% include '../components/_tag-modal.html' %}
+        {% endblock %}
+        <div class="wrapper__right html-preview">
+        <div class='banner--saved hide' id="ak-save-banner">
+            <span >Mailer successfully saved in <a id='ak-mailer-link' target= '_blank' href='#'>ActionKit.</a></span>
+        </div>
+      
+        {% if display_details %}
+        <div class="wrapper__preview">
+            <span class="wrapper__preview--litmus-info">Preview your mailing on different email clients via litmus</span>
+            <nav class="email-client_navbar">
+                {% for key,client in mailing_clients.items %}
+                    {% if key == 'GMAIL' %}
+                        <a id="{{key}}" class="email-client_navbar--item active" href="#">{{key}}</a>
+                    {% else %}
+                        <a id="{{key}}" class="email-client_navbar--item" href="#">{{key}}</a>
+                    {% endif %}
+                {% endfor %}
+            </nav>
+            <div class="preview">
+                <i class="fas fa-spinner fa-spin"></i>
+                <!-- where litmus previews are displays  -->
+                {% for key,client in mailing_clients.items %}
+                    <a href = 'https://instant-api.litmus.com/v1/emails/{{form.instance.email_guid}}/previews/{{client}}/full' class='preview--image--link'>
+                        <img alt='{{key}}' src="https://instant-api.litmus.com/v1/emails/{{form.instance.email_guid}}/previews/{{client}}/full" class ='preview--image hide' id ='preview-{{key}}'/>
+                    </a>
+                {% endfor %}
+            </div>
+            <div class="mailing__status">
+                {% if approval_status%}
+                <button class="CTA--save" id='save-ak-mailer'>Save in AK</button>
+                {% else %}
+                <p>Mailing is not approved. Get approval from an approver to save to AK </p> 
+                {% endif %}
+            </div>
+        </div>
+        {%  else %}
+        <div class ="template__preview">
+            <div>Below is a preview of what your template will look like once you filled out the form on the left</div>
+            <br>
+            <img class="template__image" src = "/static/images/template_images/{{template}}-preview.png"/>
+        </div>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,1 @@
+# TemplateLoader class should hold responsibility for loading different templates

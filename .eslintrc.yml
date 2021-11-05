@@ -1,0 +1,33 @@
+env:
+  browser: true
+  es2021: true
+  jquery: true
+extends:
+  - airbnb-base
+  - jquery
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaVersion: 12
+  sourceType: module
+plugins:
+  - "@typescript-eslint"
+rules:
+  {
+    space-in-parens: 0,
+    max-len: ["error", { code: 200, tabWidth: 2 }],
+    no-unused-expressions: ["error", { "allowTernary": true }],
+    import/no-unresolved: 0,
+    import/extensions: 0,
+    no-unused-vars: 1,
+    no-undef: 1,
+    keyword-spacing: 1,
+    space-before-blocks: 1,
+    camelcase: 1,
+    no-use-before-define: 1,
+    lines-around-comment: 0,
+    eol-last: 1,
+    object-curly-spacing: 1,
+    computed-property-spacing: 0,
+    object-curly-newline: 0,
+    array-bracket-spacing: 0,
+  }

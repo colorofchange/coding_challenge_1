@@ -1,0 +1,6 @@
+{
+  "name": "Using fixtures to represent data",
+  "username": "e2etester",
+  "password": "f56$EAAq74WM",
+  "body": "Fixtures are a great way to mock data for responses to routes"
+}

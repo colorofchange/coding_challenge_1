@@ -1,0 +1,13 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "color-hex-case": "lower",
+    "no-empty-source": null,
+    "rule-empty-line-before": [
+        "always-multi-line",
+        {
+            "except": "inside-block"
+        }
+    ]
+  }
+}

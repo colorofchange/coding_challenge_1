@@ -1,0 +1,81 @@
+.exist-mailing {
+  margin: 1rem 2rem;
+  background-color: #242424;
+  border: 1px dashed #4f4f4f;
+  padding: 1rem;
+  &--status {
+    display: block;
+  }
+  &--link {
+    display: block;
+    width: max-content;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    margin: 0.5rem 0;
+  }
+  &--title {
+    color: #e8e8e8;
+    text-decoration: underline;
+    font-weight: 401;
+    &:hover {
+      color: #b4b4b4;
+      transition: 0.2s;
+    }
+  }
+  &--date {
+    font-weight: lighter;
+    letter-spacing: 0.15rem;
+  }
+  &--tags {
+    display: flex;
+    column-gap: 1rem;
+    font-weight: bold;
+    background-color: #242424;
+    padding: 0.4rem 0;
+    &-owner {
+      color: #f9594d;
+    }
+    &-helper {
+      color: #ff7040;
+    }
+    &-dept {
+      color: #e2af07;
+    }
+    &-issue {
+      color: #589f42;
+    }
+    &-ask {
+      color: #38a5d6;
+    }
+    &-entity {
+      color: #8b86ca;
+    }
+    &-targeting {
+      color: #be83e4;
+    }
+    &-camp {
+      color: #a0866d;
+    }
+    &-other {
+      color: #a3afb5;
+    }
+  }
+}
+
+#ak-save-banner {
+  z-index: 0;
+  background-color: #fa521a;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+#ak-mailer-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+#ak-mailer-link:hover {
+  color: #121212;
+}

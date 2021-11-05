@@ -1,0 +1,39 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="wrapper__left index">
+  <div class="wrapper__left__header">
+    <p class="wrapper__left--greeting">Welcome, {{user}}!</p>
+    <form class="wrapper__left__header--form" method="post" action="{% url 'account_logout' %}"> 
+      {% csrf_token %} 
+      <input type="hidden" value="/" /> 
+      <button class="wrapper__left__header--logout">logout</button> 
+    </form>
+  </div>
+  <div class="wrapper__left--titles">
+    <h1 id="title"><span class="title--pipe">||</span>Stout.</h1>
+    <h3 id="subtitle">Build Stronger Emails</h3>
+  </div>
+  <a class="logo_wrapper" href="https://colorofchange.org">
+    <img class="logo" src="{% static 'images/logo.png' %}" />
+  </a>
+</div>
+<div class="wrapper__right">
+  <div class="wrapper__right--buttons">
+    <a href="/selection" class="wrapper__right--button">
+      <span class="wrapper__right--button--text">New Mailing</span>
+    </a>
+    <a href="/select-mailing" class="wrapper__right--button">
+      <span class="wrapper__right--button--text">Existing Mailing</span>
+    </a>
+    {% if user_can_approve %}
+    <a href="/approve" class="wrapper__right--button approval--button">
+      <span class="wrapper__right--button--text approval">Approvals</span>
+    </a>
+    {% endif %}
+  </div>
+</div>
+
+
+{% endblock %}
