@@ -8,9 +8,9 @@ The Django app allows users to create `mailing` objects (All the components of a
 
 You can find a description of the mailing object and all the fields it contains in tempalates_app/models.py:80.
 
-For this challenge you have 3 tasks:
+**For this challenge you have 3 tasks:**
 
-- TODO: Get all mailing objects from the database and create a Paginator (This interview challenge should preload the DB with 12 mailing objects). You can do this in layout/views.py:71.
+- Get all mailing objects from the database and create a Paginator (This interview challenge should preload the DB with 12 mailing objects). You can do this in layout/views.py:71.
 - Display all of the mailing objects in templates/layout/pages/select-mailing.html:38
   - Display must show date, subject and any associated tags of the mailing object
   - Feel free to style this in anyway you want. Flex your creativity!
