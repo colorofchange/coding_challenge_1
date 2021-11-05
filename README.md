@@ -22,8 +22,8 @@ The [Django Documentation](https://docs.djangoproject.com/en/3.0/) should have i
 ### Build instructions
 
 - We build this project using Docker. You'll need to download and install it from [here](https://www.docker.com/products/docker-desktop):
-  - Please reach out to us if you can't run Docker on your computer, or run into installation issues with Docker.
   - Clone this repository
   - With docker installed, navigate to the cloned repository and run this command : `docker-compose up --build`
     - Depending on your OS, you may need to (separately install docker-compose)[https://docs.docker.com/compose/install/]. (Mac OS and Windows shouldn't require this step)
-  -
+  - Navigate to your browser at [http://127.0.0.1](http://127.0.0.1)
+  - *Please reach out to us if you can't run Docker on your computer, or run into any errors on trying to run the above command.*
