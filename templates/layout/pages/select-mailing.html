@@ -37,6 +37,9 @@
             TODO: Display mailings here with the date, subject and any associated tags 
             Flex your creative muslces in how you display things!
         -->
+        {% for mailing in mailings %}
+            <p>{{mailings.count}}</p>
+        {% endfor %}
     </div>
     </div>
 {% endblock %}

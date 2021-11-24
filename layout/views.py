@@ -73,7 +73,10 @@ def mailings(request, mailing_id=None):
         # Paginator should be 10 items per page
         # render expects a request, path to an HTML file and a context dictonary
         # You can pass extra content into the context variable, which can then be used in the template (selct-mailing.html)
-
+        paginator = Paginator(Mailing.objects.all(), 10)
+        page = request.GET.get('page')
+        context['mailings'] = Mailing.objects.all()
+        print(context['mailings'])
         # No changes should be required past here.
         return render(request, 'layout/pages/select-mailing.html', context)
 
