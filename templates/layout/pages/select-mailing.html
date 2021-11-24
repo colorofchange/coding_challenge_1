@@ -39,6 +39,9 @@
         -->
         {% for mailing in mailings %}
             <p>sent on {{mailing.created_date}}</p>
+            {% for subject in mailing.subjects.all %}
+                <p>subject: {{subject.subject}}</p>
+            {% endfor %}
             {{mailing.body}}
             {% for tag in mailing.tags.all %}
                 <span>{{tag.name}}</span>
