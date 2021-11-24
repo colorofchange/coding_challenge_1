@@ -38,8 +38,22 @@
             Flex your creative muslces in how you display things!
         -->
         {% for mailing in mailings %}
-            <p>{{mailings.count}}</p>
+            <p>sent on {{mailing.created_date}}</p>
+            {{mailing.body}}
+            {% for tag in mailing.tags.all %}
+                <span>{{tag.name}}</span>
+            {% endfor %}
         {% endfor %}
+
+        {% if mailings.has_previous %}
+            <a href="?page={{mailings.previous_page_number}}">{{mailings.previous_page_number}}</a>
+        {% endif %}
+        {% if mailings.has_next %}
+            <a href="?page={{mailings.next_page_number}}">{{mailings.next_page_number}}</a>
+        {% endif %}
+
+        <span>page {{mailings.number}} of {{mailings.paginator.num_pages}}</span>
+
     </div>
     </div>
 {% endblock %}
