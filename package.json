@@ -54,7 +54,6 @@
     "eslint-config-jquery": "^3.0.0",
     "eslint-plugin-import": "^2.24.2",
     "gulp": "^4.0.2",
-    "gulp-image": "^6.2.1",
     "gulp-imagemin": "^8.0.0",
     "gulp-uglify": "^3.0.2",
     "husky": "^7.0.2",
