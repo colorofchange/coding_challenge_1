@@ -1,8 +1,8 @@
 .exist-mailing {
   margin: 1rem 2rem;
   background-color: #242424;
-  border: 1px dashed #4f4f4f;
   padding: 1rem;
+  min-height: 68vh;
   &--status {
     display: block;
   }
@@ -60,6 +60,23 @@
       color: #a3afb5;
     }
   }
+  & #prev,
+  #next {
+    top: 68%;
+  }
+  & .mailing__image {
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    border: transparent solid 3px;
+    transition: 0.5s;
+    max-height: 60vh;
+    object-fit: contain;
+    &:hover {
+      border: rgba(255, 139, 77, 0.863) solid 3px;
+      transition: 0.2s;
+    }
+  }
 }
 
 #ak-save-banner {
@@ -78,4 +95,54 @@
 
 #ak-mailer-link:hover {
   color: #121212;
+}
+
+.mailing-list {
+  padding: 0 1.5em;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  background: #242424;
+  height: 40%;
+  & .template__image {
+    width: 80%;
+    height: auto
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .mailing-list {
+    padding: 0 1.5em;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 40%;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    &__mailings {
+      grid-template-columns: 1fr;
+    }
+    &__right {
+      overflow: visible;
+    }
+    &__left {
+      min-height: 70vh;
+    }
+    &__left--titles {
+      margin-top: 5em
+    }
+  }
+}
+
+.separate-mailings {
+  width: 100%
+}
+
+.selected {
+  & .template__image {
+    border: rgba(255, 139, 77, 0.863) solid 3px;
+  }
 }

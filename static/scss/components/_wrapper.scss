@@ -87,6 +87,8 @@
     &--text,
     &--text-special {
       font-size: 4rem;
+      display: flex;
+      justify-content: center;
       font-weight: lighter;
       margin: 0;
     }
@@ -241,7 +243,6 @@
     grid-template-columns: 4fr 7fr;
     background-color: #4f4f4f;
     & .wrapper__right {
-      max-height: 100vh;
       background-color: #242424;
     }
     & .wrapper__left {

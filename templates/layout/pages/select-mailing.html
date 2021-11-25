@@ -37,26 +37,45 @@
             TODO: Display mailings here with the date, subject and any associated tags 
             Flex your creative muslces in how you display things!
         -->
-        {% for mailing in mailings %}
-            <p>sent on {{mailing.created_date}}</p>
-            {% for subject in mailing.subjects.all %}
-                <p>subject: {{subject.subject}}</p>
+
+            <div class="exist-mailing">
+                <div id='nav_buttons'>
+                    {% if mailings.has_previous %}
+                    <a href="?page={{mailings.previous_page_number}}" id="prev"> > </a>
+                    {% endif %}
+                    {% if mailings.has_next %}
+                    <a href="?page={{mailings.next_page_number}}" id="next"> > </a>
+                    {% endif %}
+                </div> 
+                {% for mailing in mailings %}
+                {% if mailing.id == id %}
+                <div class='template'>
+                    <span class='template--title'>{{mailing}}</span>
+                    <img class='mailing__image' src={% static mailing.get_template_preview %} />
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <span class='template--title'>page {{mailings.number}} of {{mailings.paginator.num_pages}}</span>
+            <hr class='separate-mailings'/>
+
+            <div class="mailing-list">
+            {% for mailing in mailings %}
+                <div class ="mailing">
+                    {% if id == mailing.id %}
+                    <div class="template selected">
+                    {% else %}
+                    <div class="template">
+                    {% endif %}
+                        <a href="?page={{mailings.number}}&id={{mailing.id}}">
+                            <img class='template__image' src={% static mailing.get_template_preview %} />
+                        </a>
+                        <span class='template--title--small'>{{mailing}}</span>
+                    </div>
+                </div>
             {% endfor %}
-            {{mailing.body}}
-            {% for tag in mailing.tags.all %}
-                <span>{{tag.name}}</span>
-            {% endfor %}
-        {% endfor %}
-
-        {% if mailings.has_previous %}
-            <a href="?page={{mailings.previous_page_number}}">{{mailings.previous_page_number}}</a>
-        {% endif %}
-        {% if mailings.has_next %}
-            <a href="?page={{mailings.next_page_number}}">{{mailings.next_page_number}}</a>
-        {% endif %}
-
-        <span>page {{mailings.number}} of {{mailings.paginator.num_pages}}</span>
-
+            </div>
     </div>
     </div>
 {% endblock %}
