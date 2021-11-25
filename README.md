@@ -14,7 +14,7 @@
 
 ## Screenshots
 
-### Click on a mailing object to show or hide its details
+### Click on a mailing object to show or hide its details !
 
 <img src="./mailing.png">
 <img src="./mailing-details.png">
