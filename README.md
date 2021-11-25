@@ -23,3 +23,5 @@
 
 - Updated the /selection page to directly display templates when a user clicks on it
 - Did a little bit of responsive design on the whole app
+
+### You need to create a .env file in the root directory before running docker-compose up !
