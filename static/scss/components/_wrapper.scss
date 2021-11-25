@@ -156,7 +156,7 @@
       text-transform: uppercase;
       font-weight: bold;
       &:hover {
-        border: 3px solid #fff;
+        border: 3px solid rgba(255, 139, 77, 0.863);
         transition: 0.5s;
         color: #fff;
       }
@@ -284,3 +284,22 @@
     }
   }
 } // .wrapper END
+
+@media only screen and (max-width: 1050px) and (orientation: portrait) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    &__mailings {
+      grid-template-columns: 1fr;
+    }
+    &__right {
+      overflow: visible;
+    }
+    &__left {
+      min-height: 70vh;
+    }
+    &__left--titles {
+      margin-top: 5em
+    }
+  }
+}

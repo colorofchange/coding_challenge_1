@@ -8,6 +8,7 @@ from django.conf import settings
 from django.core.paginator import Paginator
 from django.core import serializers
 from helpers.ak_wrapper import ActionKit
+from pyquery import PyQuery as pq
 
 
 def index(request):
@@ -76,9 +77,10 @@ def mailings(request, mailing_id=None):
         paginator = Paginator(Mailing.objects.all(), 10)
         page = request.GET.get('page')
         id = paginator.page(page or 1)[0].id
-        print(id)
         context['id'] = int(request.GET.get('id') or id)
+        context['details'] = True if request.GET.get('details') == 'true' else False
         context['mailings'] = paginator.get_page(page)
+        context['mail_body'] = pq(Mailing.objects.all()[context['id']-1].body).text()
         # No changes should be required past here.
         return render(request, 'layout/pages/select-mailing.html', context)
 

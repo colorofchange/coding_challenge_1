@@ -16,12 +16,12 @@
     max-width: 500px;
     display: block;
     margin: auto;
-    border: transparent solid 3px;
+    border: transparent solid 4px;
     transition: 0.5s;
     height: auto;
     object-fit: contain;
     &:hover {
-      border: rgba(255, 139, 77, 0.863) solid 3px;
+      border: rgba(255, 139, 77, 0.863) solid 4px;
       transition: 0.2s;
     }
   }
