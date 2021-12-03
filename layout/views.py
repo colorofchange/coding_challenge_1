@@ -8,6 +8,7 @@ from django.conf import settings
 from django.core.paginator import Paginator
 from django.core import serializers
 from helpers.ak_wrapper import ActionKit
+from django.core.paginator import Paginator
 
 
 def index(request):
@@ -73,9 +74,18 @@ def mailings(request, mailing_id=None):
         # Paginator should be 10 items per page
         # render expects a request, path to an HTML file and a context dictonary
         # You can pass extra content into the context variable, which can then be used in the template (selct-mailing.html)
+        mailings = Mailing.objects.all().values()
+        mailings = list(mailings)
+        print(len(mailings))
+        mailing_paginator = Paginator(mailings, 10)
+        page_num = request.GET.get('page')
+        
+        page = mailing_paginator.get_page(page_num)
+        
+        context['page'] = page
 
         # No changes should be required past here.
-        return render(request, 'layout/pages/select-mailing.html', context)
+        return render(request, 'layout/pages/select-mailing.html', context )
 
     instance = Mailing.objects.get(pk=mailing_id)
 
