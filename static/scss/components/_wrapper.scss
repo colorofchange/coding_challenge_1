@@ -238,7 +238,7 @@
     }
   } // .wrapper__mailing END
   &__mailings {
-    grid-template-columns: 4fr 7fr 0.5fr;
+    grid-template-columns: 4fr 7fr;
     background-color: #4f4f4f;
     & .wrapper__right {
       max-height: 100vh;
