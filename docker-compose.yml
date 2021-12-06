@@ -1,5 +1,4 @@
 version: "3.9"
-# Sound check 1 2
 
 services:
   db:
