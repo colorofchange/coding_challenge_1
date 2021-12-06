@@ -83,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATES_LOCATION = "/code/templates/email/"
+TEMPLATES_LOCATION = "templates/email/"
 
 WSGI_APPLICATION = 'stout.wsgi.application'
 
