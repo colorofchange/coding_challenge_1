@@ -25,6 +25,7 @@ services:
       python manage.py loaddata fixture.json &&
       python manage.py loaddata tags.json &&
       python manage.py loaddata mailing.json &&
+      python manage.py loaddata mailing_subject.json &&
       python manage.py create_groups &&
       npm install -g typescript &&
       npm install &&

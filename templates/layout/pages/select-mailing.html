@@ -32,11 +32,81 @@
             <img class="logo" src="{% static 'images/logo.png' %}"/>
         </a>
     </div>
-    <div class="wrapper__right">
+    <div id="mailings" class="wrapper__right">
         <!-- 
             TODO: Display mailings here with the date, subject and any associated tags 
             Flex your creative muslces in how you display things!
         -->
+            <div class="exist-mailing {%if details%}show-details{%endif%}">
+                <div id='nav_buttons'>
+                    {% if mailings.has_previous %}
+                    <a href="?page={{mailings.previous_page_number}}#mailings" id="prev"> > </a>
+                    {% endif %}
+                    {% if mailings.has_next %}
+                    <a href="?page={{mailings.next_page_number}}#mailings" id="next"> > </a>
+                    {% endif %}
+                </div> 
+                {% for mailing in mailings %}
+                {% if mailing.id == id %}
+
+                <div class="template {% if details%}hide{% endif %}">
+                    <span class='template--title'>{{mailing}}</span>
+                    <a href="?page={{mailings.number}}&id={{id}}&details={%if details%}false{%else%}true{%endif%}#mailings">
+                        <img class='mailing__image' src={% static mailing.get_template_preview %}/>
+                    </a>
+                </div>
+
+                <a class="{%if not details%}hide{%endif%}" href="?page={{mailings.number}}&id={{id}}&details={%if details%}false{%else%}true{%endif%}#mailings">
+                    <span class='template--title' style="color: white">{{mailing}}</span>
+                    <div class="details">
+                        <header class='details-header'>
+                            <p class='from'>From {{mailing.email_creator}}</p>
+                            <p class='date'>{{mailing.created_date}}</p>
+                        </header>
+                        <hr/>
+
+                        <p class='title'>Template:</p>
+                        <p>{{mailing.template}}</p>
+
+                        <div class='subjects'>
+                        {% for subject in mailing.subjects.all %}
+                        <p class='title'>Subjects:</p>
+                        <span>{{subject}}</span>
+                        {% endfor %}
+                        </div>
+
+                        <div class='tags'>
+                        <p class='title'>Tags:</p>
+                        {% for tag in mailing.tags.all %}
+                        <span>{{tag}}</span>
+                        {% endfor %}
+                        </div>
+                        
+                        <p class="details-body">{{mail_body}}</p>
+
+                    </div>
+                </a>
+
+                {% endif %}
+                {% endfor %}
+            </div>
+
+
+            <span class='template--title'>page {{mailings.number}} of {{mailings.paginator.num_pages}}</span>
+            <hr class='separate-mailings'/>
+
+            <div class="mailing-list">
+            {% for mailing in mailings %}
+                <div class ="mailing">
+                    <div class="template {% if id == mailing.id %}selected{% endif %}">
+                        <a href="?page={{mailings.number}}&id={{mailing.id}}{% if mailing.id == id %}&details={%if details%}false{%else%}true{%endif%}{% endif %}#mailings">
+                            <img class='template__image' src={% static mailing.get_template_preview %} />
+                        </a>
+                        <span class='template--title--small'>{{mailing}}</span>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
     </div>
     </div>
 {% endblock %}

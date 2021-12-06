@@ -20,7 +20,7 @@ const loadTemplates = (templateType: string = "default") => {
     response.forEach((template: any) => {
       const dashTemplateName = template.name.replace(" ", "-").toLowerCase();
       $(".template__wrapper").append(
-        `<div class="template hide" data-template-type="${template.template_type}">
+        `<div class="template" data-template-type="${template.template_type}">
          <span class="template--title">${template.name}</span>
          <a href ='/new/${dashTemplateName}'>
          <img class="template__image" src = "/static/images/template_images/${dashTemplateName}-preview.png"/>

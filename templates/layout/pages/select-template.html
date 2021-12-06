@@ -14,12 +14,14 @@
             {% include '../components/_navbar.html' %}
         {% endblock %}
         <div class="wrapper__left--titles">
-            <p class="wrapper__left--text">Select a template type:</p>
+            <p class="wrapper__left--text">template type:</p>
             <span class="wrapper__left--text-special">
                 <select id="select-template" class="wrapper__left--select">
                     <option></option>
                     {% for template_type in templates %}
-                            <option>{{template_type}}</option>
+                    {% if template_type == 'default' %}
+                    <option selected>{{template_type}}</option>
+                    {% endif %}
                     {% endfor %}
                 </select>
             </span>
@@ -31,7 +33,7 @@
 
     <div class="wrapper__right">  
         
-    <div class ="template__wrapper hide">
+    <div class ="template__wrapper">
         <div id='nav_buttons'>
             <p id="prev"> > </p>
             <p id="next"> > </p>

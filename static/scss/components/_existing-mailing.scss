@@ -1,11 +1,12 @@
 .exist-mailing {
   margin: 1rem 2rem;
   background-color: #242424;
-  border: 1px dashed #4f4f4f;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   padding: 1rem;
-  &--status {
-    display: block;
-  }
+  min-height: 68vh;
   &--link {
     display: block;
     width: max-content;
@@ -60,6 +61,23 @@
       color: #a3afb5;
     }
   }
+  & #prev,
+  #next {
+    top: 68%;
+  }
+  & .mailing__image {
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    border: transparent solid 3px;
+    transition: 0.5s;
+    max-height: 55vh;
+    object-fit: contain;
+    &:hover {
+      border: rgba(255, 139, 77, 0.863) solid 4px;
+      transition: 0.2s;
+    }
+  }
 }
 
 #ak-save-banner {
@@ -78,4 +96,103 @@
 
 #ak-mailer-link:hover {
   color: #121212;
+}
+
+.mailing-list {
+  padding: 0 1.5em;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  background: #242424;
+  height: 30%;
+  & .template__image {
+    width: 80%;
+    height: auto
+  }
+}
+
+.separate-mailings {
+  width: 100%
+}
+
+.selected {
+  & .template__image, .mailing__image {
+    border: rgba(255, 139, 77, 0.863) solid 4px;
+  }
+}
+
+.details {
+  margin: 1em;
+  min-height: 50vh;
+  max-width: 430px;
+  padding: 0 2em;
+  background: #333;
+  color: #fefefe;
+  border: 2px solid transparent;
+  &-header {
+    font-size: .8em;
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-body {
+    margin: 2em 1em;
+    text-transform: lowercase;
+  }
+  & .subjects {
+    & span {
+      background: orange;
+      display: inline-block;
+      font-size: .8em;
+      color: #333;
+      font-weight: 600;
+      padding: .2em
+    }
+  }
+  & .tags {
+    & span {
+      background: lightblue;
+      display: inline-block;
+      font-size: .8em;
+      color: #333;
+      font-weight: 600;
+      padding: .2em
+    }
+  }
+  & .title {
+    font-size: .8em;
+    margin-bottom: .5em
+  }
+  &:hover {
+    border: 2px solid rgba(255, 139, 77, 0.863)
+  }
+}
+
+// @media only screen and (max-width: 1700px) {
+//   .wrapper__right {
+//     display: block
+//   }
+//   .show-details {
+//     flex-direction: column;
+//     // justify-content: space-around;
+//     align-items: center;
+//   }
+// }
+@media only screen and (max-width: 1440px) {
+  .exist-mailing {
+    min-height: 70vh;
+    & #prev,
+    #next {
+      top: 50%;
+    }
+  }
+  .mailing__image {
+    min-height: 58vh;
+  }
+  .mailing-list {
+    padding: 0 1.5em;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 40%;
+  }
 }

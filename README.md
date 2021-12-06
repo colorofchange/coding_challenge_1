@@ -1,30 +1,27 @@
-## COC Engineering challenge
+# COC Engineering challenge
 
-Thank you for your interest in Color of Change!
+| Hi, this is my take on the interview challenge. Thank you for taking the time to look at this project!
 
-This challenge is a modified version of an repository we're actively working on and developing.
+## Here's what I worked on :
 
-The Django app allows users to create `mailing` objects (All the components of an email like the subject, email body, sender address, and some other metadata such as tags and creator notes) and then send it to another system which handles actually sending out the email.
+- Fixing the /select-mailing page which needed to display 2 columns instead of 3
+- Creating mailing objects in the mailing.json fixture file
+- Creating a Paginator with all mailing objects in the layout/views.py file
+- Displaying all mailing objects in the /select-mailing page
+- Implementing user controlled pagination in the /select-mailing page
+- Styling the /select-mailing page
+- Implementing clicking on a mailing object to show or hide its details(see in screenshots)
 
-You can find a description of the mailing object and all the fields it contains in tempalates_app/models.py:80.
+## Screenshots
 
-**For this challenge you have 3 tasks:**
+### Click on a mailing object to show or hide its details !
 
-- Get all mailing objects from the database and create a Paginator (This interview challenge should preload the DB with 12 mailing objects). You can do this in layout/views.py:71.
-- Display all of the mailing objects in templates/layout/pages/select-mailing.html:38
-  - Display must show date, subject and any associated tags of the mailing object
-  - Feel free to style this in anyway you want. Flex your creativity!
-- The `/select-mailing` page (http://127.0.0.1/select-mailing) has a small graphical bug from a previous PR, splitting the layout into 3 different columns. It should only be 2. Can you fix it? See `screenshot.png` in the root folder. The red arrows point out the extra column.
-  - Our SCSS assets are in `static/scss`
+<img src="./mailing.png">
+<img src="./mailing-details.png">
 
-The [Django Documentation](https://docs.djangoproject.com/en/3.0/) should have instructions on how to access objects from the database and other elements such as a Paginator and how HTML tempaltes work.
+## Icebox Items :
 
-### Build instructions
+- Updated the /selection page to directly display templates when a user clicks on it
+- Did a little bit of responsive design on the whole app
 
-- We build this project using Docker. You'll need to download and install it from [here](https://www.docker.com/products/docker-desktop):
-  - Clone this repository
-  - With docker installed, navigate to the cloned repository and run this command : `docker-compose up --build`
-    - Depending on your OS, you may need to (separately install docker-compose)[https://docs.docker.com/compose/install/]. (Mac OS and Windows shouldn't require this step)
-  - Navigate to your browser at [http://127.0.0.1](http://127.0.0.1)
-  - Make a new branch with your name, and push your changes to it
-  - *Please reach out to us if you can't run Docker on your computer, or run into any errors on trying to run the above command.*
+### You need to create a .env file in the root directory before running docker-compose up !

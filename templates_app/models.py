@@ -128,6 +128,11 @@ class Mailing(models.Model):
         self.save()
         return None
 
+    def get_template_preview(self):
+        if self.template:
+            return f"images/template_images/{self.template}-preview.png"
+        return None
+
 
 class MailingSubject(models.Model):
     mailing = models.ForeignKey(

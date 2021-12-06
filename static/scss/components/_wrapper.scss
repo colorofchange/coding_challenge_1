@@ -87,6 +87,8 @@
     &--text,
     &--text-special {
       font-size: 4rem;
+      display: flex;
+      justify-content: center;
       font-weight: lighter;
       margin: 0;
     }
@@ -154,7 +156,7 @@
       text-transform: uppercase;
       font-weight: bold;
       &:hover {
-        border: 3px solid #fff;
+        border: 3px solid rgba(255, 139, 77, 0.863);
         transition: 0.5s;
         color: #fff;
       }
@@ -238,10 +240,9 @@
     }
   } // .wrapper__mailing END
   &__mailings {
-    grid-template-columns: 4fr 7fr 0.5fr;
+    grid-template-columns: 4fr 7fr;
     background-color: #4f4f4f;
     & .wrapper__right {
-      max-height: 100vh;
       background-color: #242424;
     }
     & .wrapper__left {
@@ -283,3 +284,22 @@
     }
   }
 } // .wrapper END
+
+@media only screen and (max-width: 1050px) and (orientation: portrait) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    &__mailings {
+      grid-template-columns: 1fr;
+    }
+    &__right {
+      overflow: visible;
+    }
+    &__left {
+      min-height: 70vh;
+    }
+    &__left--titles {
+      margin-top: 5em
+    }
+  }
+}

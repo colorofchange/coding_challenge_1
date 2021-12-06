@@ -1,21 +1,33 @@
 .template {
-  display: flex;
-  padding: 1rem;
-  flex-direction: column;
+  margin: 1em;
+  &--title {
+    display: block;
+    text-align: center;
+    margin-bottom: 2em;
+    &--small {
+      display: block;
+      text-align: center;
+      font-size: 1em;
+      margin-top: 1em;
+      text-transform: lowercase;
+    }
+  }
   &__image {
-    width: 500px;
-    border: transparent solid 2px;
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    border: transparent solid 4px;
     transition: 0.5s;
-    height: 80vh;
+    height: auto;
     object-fit: contain;
     &:hover {
-      background-color: aliceblue;
-      border: #e8e8e8 solid 2px;
-      transition: 0.5s;
+      border: rgba(255, 139, 77, 0.863) solid 4px;
+      transition: 0.2s;
     }
   }
   &__wrapper {
     display: flex;
+    justify-content: space-between;
     margin: auto;
     width: 525px;
     text-align: center;
@@ -40,7 +52,7 @@
 #prev,
 #next {
   position: absolute;
-  top: 45%;
+  top: 40%;
   font-size: 5rem;
   font-weight: lighter;
   cursor: pointer;
