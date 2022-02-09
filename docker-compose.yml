@@ -24,7 +24,8 @@ services:
       python manage.py loaddata auth.json &&
       python manage.py loaddata fixture.json &&
       python manage.py loaddata tags.json &&
-      python manage.py loaddata mailing.json &&
+      python manage.py loaddata mailings.json &&
+      python manage.py loaddata mailing_subjects.json &&
       python manage.py create_groups &&
       npm install -g typescript &&
       npm install &&
