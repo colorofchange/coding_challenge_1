@@ -1,0 +1,112 @@
+.mailing_list_container {
+  padding: 2rem 5rem 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .mailing_objs_container {
+    width: 100%;
+    padding-left: 0px; // Removes <ul> side padding
+
+    .mailing_obj {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+
+      .date_container {
+        display: flex;
+
+        .styling_notch {
+          background-color: #e3b10a;
+          border-radius: 1px 1px 0 0;
+          width: 8px;
+        }
+
+        .date {
+          margin: 0px 0px 1px 5px;
+          color: white;
+          font-size: 12px;
+          font-style: italic;
+        }
+      }
+
+      .subject_and_tags_container {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 0.75rem;
+        background-color: white;
+        font-family: metricweb, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, sans-serif;
+        text-transform: none;
+        color: black;
+        margin-bottom: 1.5rem;
+        border-radius: 0px 3px 3px 3px;
+
+        .subject {
+          margin-bottom: 5px;
+        }
+
+        .tags {
+          margin-right: 3px;
+          font-size: 0.75rem;
+          color: #e3b10a;
+        }
+      }
+    }
+
+    .mailing_obj:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .page_btn_container {
+    padding: 0.5rem 1rem;
+    display: block;
+    background: #f95219;
+    text-align: center;
+    font-size: 13px;
+    position: relative;
+    display: table;
+    transform: skew(20deg);
+
+    .page_nav_btn {
+      color: white;
+      display: block;
+      transform: skew(-20deg);
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+    }
+
+    &:before {
+      border-bottom: 20px solid;
+      border-left: 32px solid transparent;
+      border-right: 8px solid transparent;
+      top: -20px;
+      left: 5px;
+      transform: skew(-26deg);
+      border-bottom-color: #be2d22;
+    }
+
+    &:after {
+      border-top: 20px solid;
+      border-right: 32px solid transparent;
+      border-left: 8px solid transparent;
+      right: 4px;
+      bottom: -20px;
+      transform: skew(-26deg);
+      border-top-color: #be2d22;
+    }
+
+    &:hover {
+      background: #d63600;
+      &:before {
+        border-bottom-color: #950a00;
+      }
+      &:after {
+        border-top-color: #950a00;
+      }
+    }
+  }
+}

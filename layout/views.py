@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from templates_app.forms import MailingForm, MailingFormSet
 from helpers.litmus import Litmus
 from django.conf import settings
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage
 from django.core import serializers
 from helpers.ak_wrapper import ActionKit
 
@@ -69,10 +69,18 @@ def mailings(request, mailing_id=None):
         'instructions': 'List of all mailings',
     }
     if mailing_id == None:
-        # TODO: Get all mailings and and a Paginator. 
+        # TODO: Get all mailings and add Paginator.
+        mailing_list = Mailing.objects.all()
+
         # Paginator should be 10 items per page
-        # render expects a request, path to an HTML file and a context dictonary
-        # You can pass extra content into the context variable, which can then be used in the template (selct-mailing.html)
+        p = Paginator(mailing_list, 10)
+        page_num = request.GET.get('page', 1)
+        try: # Catches error when users put an unavailable page number in url
+            mailings_page = p.page(page_num)
+        except EmptyPage:
+            mailings_page = p.page(1)
+
+        context['mailing_list'] = mailings_page
 
         # No changes should be required past here.
         return render(request, 'layout/pages/select-mailing.html', context)
@@ -87,13 +95,13 @@ def mailings(request, mailing_id=None):
     initial = {}
 
     for template_type in template_types:
-        _tempalte_type_name = template_type[0].lower()
+        _template_type_name = template_type[0].lower() # Fixed spelling
         flat_list_tags = map(
             lambda val: val[0],
-            list(tags.filter(tag_type__iexact=_tempalte_type_name).values_list('name')
+            list(tags.filter(tag_type__iexact=_template_type_name).values_list('name')
                  ))
 
-        initial[f"tag_{_tempalte_type_name}"] = ', '.join(list(flat_list_tags))
+        initial[f"tag_{_template_type_name}"] = ', '.join(list(flat_list_tags))
 
     context['template'] = instance.template.name.replace(" ", "-")
     mailing_subjects = MailingFormSet(instance=instance)

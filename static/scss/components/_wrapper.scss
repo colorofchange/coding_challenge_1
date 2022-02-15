@@ -238,11 +238,11 @@
     }
   } // .wrapper__mailing END
   &__mailings {
-    grid-template-columns: 4fr 7fr 0.5fr;
+    grid-template-columns: 4fr 7fr; // 3rd column bug fix
     background-color: #4f4f4f;
     & .wrapper__right {
+      background: url("../images/vanishing-stripes.svg");
       max-height: 100vh;
-      background-color: #242424;
     }
     & .wrapper__left {
       background-color: #4f4f4f;
