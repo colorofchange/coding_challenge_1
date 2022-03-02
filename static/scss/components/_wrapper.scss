@@ -217,6 +217,38 @@
       flex-direction: column;
       margin: auto;
     }
+    &--titles {
+      margin: auto;
+      #subtitle {
+        text-align: left;
+        position: relative;
+        left: 1rem;
+      }
+    }
+    &--text {
+      font-size: 2rem;
+      font-weight: lighter;
+      margin: 0;
+    }
+    &--date {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    &--tags {
+      font-size: 1rem;
+      margin: 0;
+    }
+    &--box {
+      padding: 11rem;
+      background-color:#fa521a;
+      margin: 1rem;
+    }
+    &--pagenav {
+      padding: 1rem;
+      background-color:black;
+      color:#121212;
+      margin: 2rem;
+    }
     .email-login {
       visibility: hidden;
       width: 1px;
@@ -238,7 +270,7 @@
     }
   } // .wrapper__mailing END
   &__mailings {
-    grid-template-columns: 4fr 7fr 0.5fr;
+    grid-template-columns: 4fr 7fr;
     background-color: #4f4f4f;
     & .wrapper__right {
       max-height: 100vh;
