@@ -37,42 +37,48 @@
 
             {% for mailing in all_mailings_page %}
                 <br>
-                <div class="wrapper__right--text">
-                        {{ mailing }}
-                </div>
-                <br>
-                <div class="wrapper__right--date">
+                <div class="wrapper__right--box">
 
-                    {{ mailing.updated_date|date:'b. m, Y' }}
+                    <div class="wrapper__right--text">
+                            {{ mailing }}
+                    </div>
+                    <br>
+                    <div class="wrapper__right--date">
+
+                        {{ mailing.updated_date|date:'b. m, Y' }}
+                        <br>
+                    </div>
+
+                    <div class="wrapper__right--tags">
+
+                        {% if mailing.tags.name %}
+                            {{ mailing.tags.name }}
+                        {% endif %}
+                    </div>
                     <br>
                 </div>
-
-                <div class="wrapper__right--tags">
-
-                    {% if mailing.tags.name %}
-                        {{ mailing.tags.name }}
-                    {% endif %}
-                </div>
-                <br>
             {% endfor %}
+
         </div>
 
         <div class="pagination">
-            {% if all_mailings_page.has_previous %}
-                <a href="?page=1">first</a>
-                <a href="?page={{ all_mailings_page.previous_page_number }}">previous</a>
-            {% endif %}
+
+
+                {% if all_mailings_page.has_previous %}
+                    <a href="?page={{ all_mailings_page.previous_page_number }}" class="wrapper__right--pagenav">previous page</a>
+                {% endif %}
             
 
 
-            {% if all_mailings_page.has_next %}
-                <a href="?page={{ all_mailings_page.next_page_number }}">next</a>
-                <a href="?page={{ all_mailings_page.paginator.num_pages }}">last</a>
-            {% endif %}
-            <br>
-            <span class="current">
-                Page {{ all_mailings_page.number }} of {{ all_mailings_page.paginator.num_pages }}
-            </span>
+                {% if all_mailings_page.has_next %}
+                    <a href="?page={{ all_mailings_page.next_page_number }}" class="wrapper__right--pagenav">next page</a>
+                {% endif %}
+            
+                <br>
+                <br>
+                 <h3>Page {{ all_mailings_page.number }} of {{ all_mailings_page.paginator.num_pages }}</h3>
+                <br>
+       
         </div>
 
     </div>
