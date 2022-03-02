@@ -73,6 +73,7 @@ def mailings(request, mailing_id=None):
         paginator = Paginator(all_mailings, 10)
         page_number = request.GET.get('page')
 
+        context['mail_subjects'] = MailingFormSet()
         context['all_mailings'] = all_mailings
         context['all_mailings_page'] = paginator.get_page(page_number)
 

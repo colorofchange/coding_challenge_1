@@ -33,12 +33,18 @@
         </a>
     </div>
     <div class="wrapper__right">
+
         {% for mailing in all_mailings_page %}
-            {{ mailing.subjects }}
+            <br>
+            {% if mailing.subjects %}
+                {{ mailing }}
+            {% endif %}
             <br>
             {{ mailing.updated_date }}
             <br>
-            {{ mailing.tags }}
+            {% if mailing.tags %}
+                {{ mailing.tags }}
+            {% endif %}
             <br>
         {% endfor %}
 
