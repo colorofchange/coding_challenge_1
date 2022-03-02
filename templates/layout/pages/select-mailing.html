@@ -37,6 +37,12 @@
             TODO: Display mailings here with the date, subject and any associated tags 
             Flex your creative muslces in how you display things!
         -->
+
+        {% for mailing in all_mailings %}
+            {{ mailing.created_date }}
+            <br>
+        {% endfor %}
+
     </div>
     </div>
 {% endblock %}
