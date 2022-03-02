@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, JsonResponse
-from templates_app.models import Template, Mailing, Tag
+from templates_app.models import Template, Mailing, Tag, MailingSubject
 from django.contrib.auth.models import User
 from templates_app.forms import MailingForm, MailingFormSet
 from helpers.litmus import Litmus
@@ -69,16 +69,10 @@ def mailings(request, mailing_id=None):
         'instructions': 'List of all mailings',
     }
     if mailing_id == None:
-        # TODO: Get all mailings and and a Paginator. 
-        # Paginator should be 10 items per page
-        # render expects a request, path to an HTML file and a context dictonary
-        # You can pass extra content into the context variable, which can then be used in the template (selct-mailing.html)
-
-        # No changes should be required past here.
         all_mailings = Mailing.objects.all()
         paginator = Paginator(all_mailings, 10)
         page_number = request.GET.get('page')
-        
+
         context['all_mailings'] = all_mailings
         context['all_mailings_page'] = paginator.get_page(page_number)
 
