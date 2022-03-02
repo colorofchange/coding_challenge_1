@@ -38,10 +38,27 @@
             Flex your creative muslces in how you display things!
         -->
 
-        {% for mailing in all_mailings %}
+        {% for mailing in all_mailings_page %}
             {{ mailing.created_date }}
             <br>
         {% endfor %}
+
+        <div class="pagination">
+            {% if all_mailings_page.has_previous %}
+                <a href="?page=1"> first</a>
+                <a href="?page={{ all_mailings_page.previous_page_number }}">previous</a>
+            {% endif %}
+            
+            <span class="current">
+                Page {{ all_mailings_page.number }} of {{ all_mailings_page.paginator.num_pages }}
+            </span>
+
+            {% if all_mailings_page.has_next %}
+                <a href="?page={{ all_mailings_page.next_page_number }}">next</a>
+                <a href="?page={{ all_mailings_page.paginator.num_pages }}">last</a>
+            {% endif %}
+        </div>
+
 
     </div>
     </div>
