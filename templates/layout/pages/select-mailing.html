@@ -3,6 +3,8 @@
 {%load template_filters%}
 {% block scripts %}
     {{ block.super }}
+    <script type="module" src="{% static 'js/public/select-mailing.js' %}" defer></script>
+
 {% endblock %}
 
 {% block content %}
