@@ -35,29 +35,33 @@
     <div class="wrapper__right">
         <div class="wrapper__right--titles">
 
-            {% for mailing in all_mailings_page %}
-                <br>
-                <div class="wrapper__right--box">
-
-                    <div class="wrapper__right--text">
-                            {{ mailing }}
-                    </div>
+                {% for mailing in all_mailings_page %}
                     <br>
-                    <div class="wrapper__right--date">
+                    <a href="/mailing/{{ mailing.id}}">
 
-                        {{ mailing.updated_date|date:'b. m, Y' }}
-                        <br>
-                    </div>
+                        <div class="wrapper__right--box">
 
-                    <div class="wrapper__right--tags">
+                            <div class="wrapper__right--text">
+                                    {{ mailing }}
+                            </div>
+                            <br>
+                            <div class="wrapper__right--date">
 
-                        {% if mailing.tags.name %}
-                            {{ mailing.tags.name }}
-                        {% endif %}
-                    </div>
-                    <br>
-                </div>
-            {% endfor %}
+                                {{ mailing.updated_date|date:'b. m, Y' }}
+                                <br>
+                            </div>
+
+                            <div class="wrapper__right--tags">
+
+                                {% if mailing.tags.name %}
+                                    {{ mailing.tags.name }}
+                                {% endif %}
+                            </div>
+                            <br>
+                        </div>
+                     </a>
+
+                {% endfor %}
 
         </div>
 
