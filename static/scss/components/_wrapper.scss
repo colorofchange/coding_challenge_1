@@ -172,6 +172,7 @@
         border: 3px solid #fff;
         transition: 0.5s;
         color: #fff;
+        background-color: #121212;
       }
     }
     .addDelButtonWrapper {
@@ -243,6 +244,7 @@
     &--text {
       font-size: 2rem;
       margin: 0;
+      color:#2E95CC;
       @font-face {
         font-family: 'Metric-Web';
         src: url('https://coc-email-template.s3.us-east-2.amazonaws.com/font/MetricWeb-Bold.woff') format('woff');
@@ -253,7 +255,7 @@
     &--date {
       font-size: 1.5rem;
       margin: 0;
-      color:#121212;
+      color:#F33A15;
     }
     &--tags {
       font-size: 1rem;
@@ -270,11 +272,15 @@
     
     }
     &--box {
-      padding: 11rem;
+      padding: 5rem;
       background-color:#fff;
       text-align: center;
       margin: 1rem;
       border-radius: .5rem;
+      &:hover {
+        background-color: #121212;
+        color:#fff;
+      }
 
     }
     &--container {
@@ -287,6 +293,10 @@
       background-color:#DAA20C;
       color:#121212;
       margin: 2rem;
+      &:hover {
+        background-color: #121212;
+        color:#fff;
+      }
     }
     .email-login {
       visibility: hidden;
