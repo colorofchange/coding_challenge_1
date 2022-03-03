@@ -4,6 +4,7 @@
 {% block scripts %}
     {{ block.super }}
     <script type="module" src="{% static 'js/public/select-mailing.js' %}" defer></script>
+
 {% endblock %}
 
 {% block content %}
@@ -33,10 +34,62 @@
         </a>
     </div>
     <div class="wrapper__right">
-        <!-- 
-            TODO: Display mailings here with the date, subject and any associated tags 
-            Flex your creative muslces in how you display things!
-        -->
+        <p class="wrapper__right--info"> Click on a mailing to see details </p>
+
+        <div class="wrapper__right--container">
+
+
+                {% for mailing in all_mailings_page %}
+                    <br>
+                    <a href="/mailing/{{ mailing.id}}">
+
+                        <div class="wrapper__right--box">
+
+                            <div class="wrapper__right--text">
+                                    {{ mailing }}
+                            </div>
+                            <br>
+                            <div class="wrapper__right--date">
+
+                                {{ mailing.updated_date|date:'b. m, Y' }}
+                                <br>
+                            </div>
+
+                            <p class="wrapper__right--tags">
+        
+                                {% if mailing.tags.name %}
+                                    {{ mailing.tags.name }}   
+                                {% endif %}
+                            </p>
+                            <br>
+                        </div>
+                     </a>
+
+                {% endfor %}
+
+
+        </div>
+
+        <div class="pagination">
+
+
+                {% if all_mailings_page.has_previous %}
+                    <a href="?page={{ all_mailings_page.previous_page_number }}" class="wrapper__right--pagenav">previous page</a>
+                {% endif %}
+            
+
+
+                {% if all_mailings_page.has_next %}
+                    <a href="?page={{ all_mailings_page.next_page_number }}" class="wrapper__right--pagenav">next page</a>
+                {% endif %}
+            
+                <br>
+                <br>
+                 <h3>Page {{ all_mailings_page.number }} of {{ all_mailings_page.paginator.num_pages }}</h3>
+                <br>
+       
+        </div>
+
     </div>
     </div>
 {% endblock %}
