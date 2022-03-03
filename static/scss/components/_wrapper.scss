@@ -5,7 +5,6 @@
   font-style: normal;
 } 
 
-
 .wrapper {
   color: $accent-light;
   display: grid;
@@ -199,7 +198,7 @@
   } // .wrapper__left END
   &__right {
     display: flex;
-    background: linear-gradient(to left bottom, #DAA20C, #F33A15, #AD1A1A,#0B4B02,#2E95CC,#48275F);
+    background: #242424;
     flex-direction: column;
     position: relative;
     overflow: auto;
@@ -246,16 +245,28 @@
     &--date {
       font-size: 1.5rem;
       margin: 0;
+      color:#121212;
     }
     &--tags {
       font-size: 1rem;
       margin: 0;
+    }
+    &--info {
+      text-align: center;
+      margin-top: 5%;
+      margin-bottom:0%;
+      color:#121212;
+      background-color: #fff;
+      padding: .5rem;
+      font-size:1rem;
+    
     }
     &--box {
       padding: 11rem;
       background-color:#fff;
       text-align: center;
       margin: 1rem;
+      border-radius: .5rem;
 
     }
     &--container {
