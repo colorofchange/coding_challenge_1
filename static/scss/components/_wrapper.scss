@@ -582,6 +582,8 @@
       position: relative;
       overflow: auto;
       min-width: 100%;
+      margin:0;
+      padding: 1rem 2.5rem;
       &--button {
         margin: 1.5rem;
         padding: 7rem 12rem;
@@ -643,7 +645,7 @@
       
       }
       &--box {
-        padding: 5rem;
+        padding: 3rem;
         background-color:#fff;
         text-align: center;
         margin: 1rem;
