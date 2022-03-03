@@ -1,11 +1,18 @@
+@font-face {
+  font-family: 'Metric-Web';
+  src: url('https://coc-email-template.s3.us-east-2.amazonaws.com/font/MetricWeb-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+} 
+
 .wrapper {
   color: $accent-light;
   display: grid;
   height: 100%;
   grid-template-columns: 4fr 7fr;
   text-transform: uppercase;
-  font-family: "Metric", sans-serif;
-  #subtitle {
+  font-family: 'Metric-Web';
+ #subtitle {
     margin: 0;
     font-size: 1rem;
     letter-spacing: 3px;
@@ -144,7 +151,7 @@
     &--button {
       border: 3px solid transparent;
       padding: 1rem;
-      background-color: #242424;
+      background-color: #DAA20C;
       color: #e8e8e8;
       position: relative;
       bottom: 0.3rem;
@@ -191,15 +198,15 @@
   } // .wrapper__left END
   &__right {
     display: flex;
-    background-color: #242424;
+    background: #242424;
     flex-direction: column;
     position: relative;
     overflow: auto;
     &--button {
       margin: 1.5rem;
       padding: 7rem 12rem;
-      background-color: #4f4f4f;
-      color: #e8e8e8;
+      background-color: #121212;
+      color: #121212;
       text-align: center;
       text-decoration: none;
       font-size: 2rem;
@@ -227,25 +234,49 @@
     }
     &--text {
       font-size: 2rem;
-      font-weight: lighter;
       margin: 0;
+      @font-face {
+        font-family: 'Metric-Web';
+        src: url('https://coc-email-template.s3.us-east-2.amazonaws.com/font/MetricWeb-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+      }
     }
     &--date {
       font-size: 1.5rem;
       margin: 0;
+      color:#121212;
     }
     &--tags {
       font-size: 1rem;
       margin: 0;
     }
+    &--info {
+      text-align: center;
+      margin-top: 5%;
+      margin-bottom:0%;
+      color:#121212;
+      background-color: #fff;
+      padding: .5rem;
+      font-size:1rem;
+    
+    }
     &--box {
       padding: 11rem;
-      background-color:#fa521a;
+      background-color:#fff;
+      text-align: center;
       margin: 1rem;
+      border-radius: .5rem;
+
+    }
+    &--container {
+      width: 70%;
+      margin: 15%;
+      background-color: rgba(62,62,62,0.7);
     }
     &--pagenav {
       padding: 1rem;
-      background-color:black;
+      background-color:#DAA20C;
       color:#121212;
       margin: 2rem;
     }
@@ -257,7 +288,7 @@
   } // .wrapper__right END
   &__mailing {
     grid-template-columns: 6fr 4fr;
-    background-color: #4f4f4f;
+    background-color: #DAA20C;
     .wrapper__left {
       max-height: 100vh;
       overflow: auto;
@@ -274,7 +305,7 @@
     background-color: #4f4f4f;
     & .wrapper__right {
       max-height: 100vh;
-      background-color: #242424;
+      background: linear-gradient(to left bottom, #DAA20C, #F33A15, #AD1A1A,#2E95CC);
     }
     & .wrapper__left {
       background-color: #4f4f4f;
