@@ -1,11 +1,19 @@
+@font-face {
+  font-family: 'Metric-Web';
+  src: url('https://coc-email-template.s3.us-east-2.amazonaws.com/font/MetricWeb-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+} 
+
+
 .wrapper {
   color: $accent-light;
   display: grid;
   height: 100%;
   grid-template-columns: 4fr 7fr;
   text-transform: uppercase;
-  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-  #subtitle {
+  font-family: 'Metric-Web';
+ #subtitle {
     margin: 0;
     font-size: 1rem;
     letter-spacing: 3px;
@@ -199,7 +207,7 @@
       margin: 1.5rem;
       padding: 7rem 12rem;
       background-color: #121212;
-      color: #black;
+      color: #121212;
       text-align: center;
       text-decoration: none;
       font-size: 2rem;
@@ -227,8 +235,13 @@
     }
     &--text {
       font-size: 2rem;
-      font-weight: lighter;
       margin: 0;
+      @font-face {
+        font-family: 'Metric-Web';
+        src: url('https://coc-email-template.s3.us-east-2.amazonaws.com/font/MetricWeb-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+      }
     }
     &--date {
       font-size: 1.5rem;
@@ -241,7 +254,14 @@
     &--box {
       padding: 11rem;
       background-color:#fff;
+      text-align: center;
       margin: 1rem;
+
+    }
+    &--container {
+      width: 70%;
+      margin: 15%;
+      background-color: rgba(62,62,62,0.7);
     }
     &--pagenav {
       padding: 1rem;
