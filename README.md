@@ -2,7 +2,7 @@
 
 Thank you for your interest in Color of Change!
 
-This challenge is a modified version of an repository we're actively working on and developing.
+This challenge is a modified version of a repository we're actively working on and developing.
 
 The Django app allows users to create `mailing` objects (All the components of an email like the subject, email body, sender address, and some other metadata such as tags and creator notes) and then send it to another system which handles actually sending out the email.
 
@@ -17,7 +17,9 @@ You can find a description of the mailing object and all the fields it contains 
 - The `/select-mailing` page (http://127.0.0.1/select-mailing) has a small graphical bug from a previous PR, splitting the layout into 3 different columns. It should only be 2. Can you fix it? See `screenshot.png` in the root folder. The red arrows point out the extra column.
   - Our SCSS assets are in `static/scss`
 
-The [Django Documentation](https://docs.djangoproject.com/en/3.0/) should have instructions on how to access objects from the database and other elements such as a Paginator and how HTML tempaltes work.
+While working on this challenge, please write tests where you think it's appropriate for the features you are adding or modifying.
+
+The [Django Documentation](https://docs.djangoproject.com/en/3.0/) should have instructions on how to access objects from the database and other elements such as a Paginator and how HTML templates work.
 
 ### Build instructions
 
