@@ -6,7 +6,7 @@ This challenge is a modified version of a repository we're actively working on a
 
 The Django app allows users to create `mailing` objects (All the components of an email like the subject, email body, sender address, and some other metadata such as tags and creator notes) and then send it to another system which handles actually sending out the email.
 
-You can find a description of the mailing object and all the fields it contains in tempalates_app/models.py:80.
+You can find a description of the mailing object and all the fields it contains in templates_app/models.py:80.
 
 **For this challenge you have 3 tasks:**
 
