@@ -39,11 +39,21 @@
             -->
             {% for email in mailings_obj %}
             <div class="exist-mailing">
-                <h3>{{ email }}</h3>
-                <p>
-                    {{ email.body }}
+                <p class="exist-mailing--date">
                     {{ email.created_date }}
                 </p>
+                <h3 class="exist-mailing--title">{{ email }}</h3>
+                <ul class="exist-mailing--tags">
+                    {% if email.tag_ask is not None %}<li class="exist-mailing--tags-ask">{{ email.tag_ask }}</li>{% endif %}
+                    {% if email.tag_camp is not None %}<li class="exist-mailing--tags-camp">{{ email.tag_camp }}</li>{% endif %}
+                    {% if email.tag_dept is not None %}<li class="exist-mailing--tags-dept">{{ email.tag_dept }}</li>{% endif %}
+                    {% if email.tag_ent is not None %}<li class="exist-mailing--tags-entity">{{ email.tag_ent }}</li>{% endif %}
+                    {% if email.tag_i is not None %}<li class="exist-mailing--tags-issue">{{ email.tag_i }}</li>{% endif %}
+                    {% if email.tag_oth is not None %}<li class="exist-mailing--tags-other">{{ email.tag_oth }}</li>{% endif %}
+                    {% if email.tag_own is not None %}<li class="exist-mailing--tags-owner">{{ email.tag_own }}</li>{% endif %}
+                    {% if email.tag_tgt is not None %}<li class="exist-mailing--tags-targeting">{{ email.tag_tgt }}</li>{% endif %}
+                    {% if email.tag_help is not None %}<li class="exist-mailing--tags-helper">{{ email.tag_help }}</li>{% endif %}
+                </ul>
             </div>
             {% endfor %}
             <div class="pagination">
