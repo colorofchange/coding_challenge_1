@@ -9,34 +9,60 @@
 {% block content %}
     {% csrf_token %}
     <div class="wrapper__mailings">
-    <div class="wrapper__left">
-        {% block section %}
-            {% include '../components/_navbar.html' %}
-        {% endblock %}
-        <div class="wrapper__left--titles">
-            <p class="wrapper__left--text">Filter by</p>
-                <select id ="filter-type" class="wrapper__left--select">
-                    <option default></option>
-                    <option>Tag</option>
-                    <option>User</option>
-                </select>
-            <p>
-                <input id ="tag_input" class ="wrapper__left--input filters hide" type="text" placeholder="Enter tags to filter">
-                <input id ="user_input" class ="wrapper__left--input filters hide" type="text" placeholder="Enter user to filter">
-            </p>
-            <p>
-                <button class = "wrapper__left--button" id ="filter-btn">Filter</button>
-            </p>
+        <div class="wrapper__left">
+            {% block section %}
+                {% include '../components/_navbar.html' %}
+            {% endblock %}
+            <div class="wrapper__left--titles">
+                <p class="wrapper__left--text">Filter by</p>
+                    <select id ="filter-type" class="wrapper__left--select">
+                        <option default></option>
+                        <option>Tag</option>
+                        <option>User</option>
+                    </select>
+                <p>
+                    <input id ="tag_input" class ="wrapper__left--input filters hide" type="text" placeholder="Enter tags to filter">
+                    <input id ="user_input" class ="wrapper__left--input filters hide" type="text" placeholder="Enter user to filter">
+                </p>
+                <p>
+                    <button class = "wrapper__left--button" id ="filter-btn">Filter</button>
+                </p>
+            </div>
+            <a class="logo_wrapper" href="https://colorofchange.org">
+                <img class="logo" src="{% static 'images/logo.png' %}"/>
+            </a>
         </div>
-        <a class="logo_wrapper" href="https://colorofchange.org">
-            <img class="logo" src="{% static 'images/logo.png' %}"/>
-        </a>
-    </div>
-    <div class="wrapper__right">
-        <!-- 
-            TODO: Display mailings here with the date, subject and any associated tags 
-            Flex your creative muslces in how you display things!
-        -->
-    </div>
+        <div class="wrapper__right">
+            <!-- 
+                TODO: Display mailings here with the date, subject and any associated tags 
+                Flex your creative muslces in how you display things!
+            -->
+            {% for email in mailings_obj %}
+            <div class="exist-mailing">
+                <h3>{{ email }}</h3>
+                <p>
+                    {{ email.body }}
+                    {{ email.created_date }}
+                </p>
+            </div>
+            {% endfor %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if mailings_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ mailings_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+            
+                    <span class="current">
+                        Page {{ mailings_obj.number }} of {{ mailings_obj.paginator.num_pages }}.
+                    </span>
+            
+                    {% if mailings_obj.has_next %}
+                        <a href="?page={{ mailings_obj.next_page_number }}">next</a>
+                        <a href="?page={{ mailings_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
     </div>
 {% endblock %}
