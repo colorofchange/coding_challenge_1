@@ -75,7 +75,7 @@ def mailings(request, mailing_id=None):
         # You can pass extra content into the context variable, which can then be used in the template (selct-mailing.html)
 
         mailings = Mailing.objects.all()
-        mailings_paginator = Paginator(mailings, 6)
+        mailings_paginator = Paginator(mailings, 10)
         current_page_number = request.GET.get('page')
         mailings_obj = mailings_paginator.get_page(current_page_number)
         
