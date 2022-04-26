@@ -190,7 +190,6 @@
     }
   } // .wrapper__left END
   &__right {
-    grid-column: span 2;
     display: flex;
     background-color: #242424;
     flex-direction: column;
@@ -284,3 +283,7 @@
     }
   }
 } // .wrapper END
+
+.wrapper-right-existing-mailings {
+  grid-column: span 2;
+}
