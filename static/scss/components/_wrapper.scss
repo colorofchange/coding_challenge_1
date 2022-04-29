@@ -1,285 +1,745 @@
-.wrapper {
-  color: $accent-light;
-  display: grid;
-  height: 100%;
-  grid-template-columns: 4fr 7fr;
-  text-transform: uppercase;
-  font-family: "Metric", sans-serif;
-  #subtitle {
-    margin: 0;
-    font-size: 1rem;
-    letter-spacing: 3px;
-    font-weight: normal;
-    text-align: center;
-  }
-  #title {
-    color: #e8e8e8;
-    font-size: 5rem;
-    letter-spacing: 9px;
-    margin: 0 auto;
-    font-weight: 900;
-  }
-  .title--pipe {
-    color: #fa521a;
-    letter-spacing: -6px;
-    height: 4.4rem;
-    overflow: hidden;
-    display: inline-block;
-    margin: auto 0.8rem;
-  }
-  .logo_wrapper {
-    margin: 0 auto;
-    .logo {
-      width: 75px;
-      height: 75px;
-      margin: 0 auto;
-    }
-  }
-  &__preview {
+@font-face {
+  font-family: 'Metric-Web';
+  src: url('https://coc-email-template.s3.us-east-2.amazonaws.com/font/MetricWeb-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+} 
+
+//Desktop Wrapper
+@media (min-width: 1025px) {
+  .wrapper {
+    color: $accent-light;
     display: grid;
-    grid-template-columns: 3fr 8fr;
-    margin: 6rem 1rem;
-    &--litmus-info {
-      text-align: center;
-      grid-row: 1;
-      grid-column: 1/3;
-      color: #8b8b8b;
-      letter-spacing: 2px;
-      font-size: 0.9rem;
-    }
-  }
-  &__mailing,
-  &__mailings {
-    display: grid;
-    position: absolute;
-    width: 100%;
     height: 100%;
-  }
-  &__left {
-    flex-direction: column;
-    padding: 1rem 2.5rem;
-    position: relative;
-    display: flex;
-    min-width: 470px;
-    margin: 0;
-    background-color: #4f4f4f;
-    justify-content: space-between;
-    &.index {
-      min-width: 350px;
+    grid-template-columns: 4fr 7fr;
+    text-transform: uppercase;
+    font-family: 'Metric-Web';
+    cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/main/colorlogo.png),auto;
+    a {
+      cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
     }
-    &--greeting {
-      color: #e8e8e8;
-      letter-spacing: 2px;
-    }
-    &--titles {
-      margin: auto;
-      #subtitle {
-        text-align: left;
-        position: relative;
-        left: 1rem;
-      }
-    }
-    &--logo {
-      width: 75px;
-      height: 75px;
-      margin: 0 auto;
-    }
-    &--text,
-    &--text-special {
-      font-size: 4rem;
-      font-weight: lighter;
+  #subtitle {
       margin: 0;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      font-weight: normal;
+      text-align: center;
     }
-    &__header {
-      display: flex;
-      justify-content: space-evenly;
-      &--form {
-        align-self: center;
+    #title {
+      color: #e8e8e8;
+      font-size: 5rem;
+      letter-spacing: 9px;
+      margin: 0 auto;
+      font-weight: 900;
+    }
+    .title--pipe {
+      color: #fa521a;
+      letter-spacing: -6px;
+      height: 4.4rem;
+      overflow: hidden;
+      display: inline-block;
+      margin: auto 0.8rem;
+    }
+    .logo_wrapper {
+      margin: 0 auto;
+      .logo {
+        width: 75px;
+        height: 75px;
+        margin: 0 auto;
       }
-      &--logout {
-        font-weight: bold;
-        cursor: pointer;
-        background-color: #242424;
-        padding: 0.75rem 1rem;
-        border: 0;
+    }
+    &__preview {
+      display: grid;
+      grid-template-columns: 3fr 8fr;
+      margin: 6rem 1rem;
+      &--litmus-info {
+        text-align: center;
+        grid-row: 1;
+        grid-column: 1/3;
+        color: #8b8b8b;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+      }
+    }
+    &__mailing,
+    &__mailings {
+      display: grid;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    &__left {
+      flex-direction: column;
+      padding: 1rem 2.5rem;
+      position: relative;
+      display: flex;
+      min-width: 470px;
+      margin: 0;
+      background-color: #4f4f4f;
+      justify-content: space-between;
+      &.index {
+        min-width: 350px;
+      }
+      &--greeting {
         color: #e8e8e8;
+        letter-spacing: 2px;
+      }
+      &--titles {
+        margin: auto;
+        #subtitle {
+          text-align: left;
+          position: relative;
+          left: 1rem;
+        }
+      }
+      &--logo {
+        width: 75px;
+        height: 75px;
+        margin: 0 auto;
+      }
+      &--text,
+      &--text-special {
+        font-size: 4rem;
+        font-weight: lighter;
+        margin: 0;
+      }
+      &__header {
+        display: flex;
+        justify-content: space-evenly;
+        &--form {
+          align-self: center;
+        }
+        &--logout {
+          font-weight: bold;
+          cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
+          background-color: #242424;
+          padding: 0.75rem 1rem;
+          border: 0;
+          color: #e8e8e8;
+          text-transform: uppercase;
+          transition: 0.3s;
+          box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
+          &:hover {
+            background-color: #121212;
+          }
+        }
+      }
+      &--select {
+        border: 1px solid $accent-light;
+        padding: 1rem;
+        color: #e8e8e8;
+        position: relative;
+        bottom: 0.3rem;
+        margin: 1rem 0;
+        font-size: 1.65rem;
+        width: 17rem;
+        appearance: none;
+        background: url("../images/dropdown-arrow.png");
         text-transform: uppercase;
-        transition: 0.3s;
-        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-origin: content-box;
+        cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
+
+      }
+      &--input {
+        border: 1px solid $accent-light;
+        padding: 1rem;
+        background-color: transparent;
+        position: relative;
+        bottom: 0.3rem;
+        margin: 1rem 0;
+        width: 15rem;
+        text-transform: uppercase;
+        color: #e8e8e8;
+        font-size: 0.95em;
+        height: 2em;
+        
+      }
+      &--button {
+        border: 3px solid transparent;
+        padding: 1rem;
+        background-color: #DAA20C;
+        color: #e8e8e8;
+        position: relative;
+        bottom: 0.3rem;
+        margin: 1rem 0;
+        font-size: 1.25rem;
+        width: 17rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
         &:hover {
+          border: 3px solid #fff;
+          transition: 0.5s;
+          color: #fff;
           background-color: #121212;
         }
       }
-    }
-    &--select {
-      border: 1px solid $accent-light;
-      padding: 1rem;
-      color: #e8e8e8;
-      position: relative;
-      bottom: 0.3rem;
-      margin: 1rem 0;
-      font-size: 1.65rem;
-      width: 17rem;
-      appearance: none;
-      background: url("../images/dropdown-arrow.png");
-      text-transform: uppercase;
-      background-position: right;
-      background-repeat: no-repeat;
-      background-size: 20px;
-      background-origin: content-box;
-    }
-    &--input {
-      border: 1px solid $accent-light;
-      padding: 1rem;
-      background-color: transparent;
-      position: relative;
-      bottom: 0.3rem;
-      margin: 1rem 0;
-      width: 15rem;
-      text-transform: uppercase;
-      color: #e8e8e8;
-      font-size: 0.95em;
-      height: 2em;
-    }
-    &--button {
-      border: 3px solid transparent;
-      padding: 1rem;
-      background-color: #242424;
-      color: #e8e8e8;
-      position: relative;
-      bottom: 0.3rem;
-      margin: 1rem 0;
-      font-size: 1.25rem;
-      width: 17rem;
-      text-transform: uppercase;
-      font-weight: bold;
-      &:hover {
-        border: 3px solid #fff;
-        transition: 0.5s;
-        color: #fff;
+      .addDelButtonWrapper {
+        display: flex;
+        justify-content: right;
+        &--info {
+          margin: auto 0.5rem;
+          color: #8b8b8b;
+          font-size: 0.7rem;
+          letter-spacing: 3px;
+        }
       }
-    }
-    .addDelButtonWrapper {
-      display: flex;
-      justify-content: right;
-      &--info {
-        margin: auto 0.5rem;
-        color: #8b8b8b;
-        font-size: 0.7rem;
-        letter-spacing: 3px;
-      }
-    }
-    &--addDelButtons {
-      height: 1rem;
-      text-align: center;
-      display: inline-block;
-      font-size: 1.8rem;
-      cursor: pointer;
-      line-height: 0;
-      padding: 0.8rem 0.4rem 1rem;
-      margin: 0.25rem 0.25rem;
-      background-color: transparent;
-      border: 1px solid #e8e8e8;
-      color: #e8e8e8;
-      transition: 0.2s;
-      &:hover {
-        color: #fa5119;
+      &--addDelButtons {
+        height: 1rem;
+        text-align: center;
+        display: inline-block;
+        font-size: 1.8rem;
+        cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
+        line-height: 0;
+        padding: 0.8rem 0.4rem 1rem;
+        margin: 0.25rem 0.25rem;
+        background-color: transparent;
+        border: 1px solid #e8e8e8;
+        color: #e8e8e8;
         transition: 0.2s;
-        border-color: #fa5119;
+        &:hover {
+          color: #fa5119;
+          transition: 0.2s;
+          border-color: #fa5119;
+        }
       }
-    }
-  } // .wrapper__left END
-  &__right {
-    display: flex;
-    background-color: #242424;
-    flex-direction: column;
-    position: relative;
-    overflow: auto;
-    &--button {
-      margin: 1.5rem;
-      padding: 7rem 12rem;
-      background-color: #4f4f4f;
-      color: #e8e8e8;
-      text-align: center;
-      text-decoration: none;
-      font-size: 2rem;
-      font-weight: bold;
-      border: 4px solid transparent;
-      transition: 0.5s;
-      filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.25));
-      &:hover {
-        background-color: #757575;
+    } //  Desktop .wrapper__left END
+    &__right {
+      display: flex;
+      background: #242424;
+      flex-direction: column;
+      position: relative;
+      overflow: auto;
+      &--button {
+        margin: 1.5rem;
+        padding: 7rem 12rem;
+        background-color: #121212;
+        color: #121212;
+        text-align: center;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: bold;
+        border: 4px solid transparent;
         transition: 0.5s;
+        filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.25));
+        &:hover {
+          background-color: #757575;
+          transition: 0.5s;
+        }
+      }
+      &--buttons {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+      }
+      &--titles {
+        margin: auto;
+        #subtitle {
+          text-align: left;
+          position: relative;
+          left: 1rem;
+        }
+      }
+      &--text {
+        font-size: 2rem;
+        margin: 0;
+        color:#2E95CC;
+        @font-face {
+          font-family: 'Metric-Web';
+          src: url('https://coc-email-template.s3.us-east-2.amazonaws.com/font/MetricWeb-Bold.woff') format('woff');
+          font-weight: bold;
+          font-style: normal;
+        }
+      }
+      &--date {
+        font-size: 1.5rem;
+        margin: 0;
+        color:#F33A15;
+      }
+      &--tags {
+        font-size: 1rem;
+        margin: 0;
+        padding: .3rem;
+
+      }
+      &--info {
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom:0%;
+        color:#121212;
+        background-color: #fff;
+        padding: .5rem;
+        font-size:1rem;
+      
+      }
+      &--box {
+        padding: 3rem;
+        background-color:#fff;
+        text-align: center;
+        margin: 1rem;
+        border-radius: .5rem;
+        &:hover {
+          background-color: #121212;
+          color:#fff;
+        }
+
+      }
+      &--container {
+        width: 70%;
+        margin: 15%;
+        background-color: rgba(62,62,62,0.7);
+      }
+      &--pagenav {
+        padding: 1rem;
+        background-color:#DAA20C;
+        color:#121212;
+        margin: 2rem;
+        &:hover {
+          background-color: #121212;
+          color:#fff;
+        }
+      }
+      .email-login {
+        visibility: hidden;
+        width: 1px;
+        font-size: 1px;
+      }
+    } //  Desktop .wrapper__right END
+    &__mailing {
+      grid-template-columns: 6fr 4fr;
+      background-color: #DAA20C;
+      .wrapper__left {
+        max-height: 100vh;
+        overflow: auto;
+      }
+      & .wrapper__left form p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem 0;
+      }
+    } //  Desktop .wrapper__mailing END
+    &__mailings {
+      grid-template-columns: 4fr 7fr;
+      background-color: #4f4f4f;
+      & .wrapper__right {
+        max-height: 100vh;
+        background: linear-gradient(to left bottom, #DAA20C, #F33A15, #AD1A1A,#2E95CC);
+      }
+      & .wrapper__left {
+        background-color: #4f4f4f;
       }
     }
-    &--buttons {
+    &.home {
+      background-color: #4f4f4f;
       display: flex;
       flex-direction: column;
       margin: auto;
-    }
-    .email-login {
-      visibility: hidden;
-      width: 1px;
-      font-size: 1px;
-    }
-  } // .wrapper__right END
-  &__mailing {
-    grid-template-columns: 6fr 4fr;
-    background-color: #4f4f4f;
-    .wrapper__left {
-      max-height: 100vh;
-      overflow: auto;
-    }
-    & .wrapper__left form p {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 1.5rem 0;
-    }
-  } // .wrapper__mailing END
-  &__mailings {
-    grid-template-columns: 4fr 7fr 0.5fr;
-    background-color: #4f4f4f;
-    & .wrapper__right {
-      max-height: 100vh;
-      background-color: #242424;
-    }
-    & .wrapper__left {
-      background-color: #4f4f4f;
-    }
-  }
-  &.home {
-    background-color: #4f4f4f;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    justify-content: space-around;
-    padding: 4rem 0 18rem;
-    box-sizing: border-box;
-    .wrapper--titles {
-      margin: 6rem auto;
-      line-height: 1.2;
-      color: #e8e8e8;
-    }
-    .wrapper__buttons {
-      margin: 3rem auto;
-    }
-    .wrapper__button {
-      background-color: #242424;
-      padding: 1.3rem 4.5rem;
-      font-size: 2rem;
-      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
-      cursor: pointer;
-      transition: 0.2s;
-      &--text {
+      justify-content: space-around;
+      padding: 4rem 0 18rem;
+      box-sizing: border-box;
+      .wrapper--titles {
+        margin: 6rem auto;
+        line-height: 1.2;
         color: #e8e8e8;
-        font-weight: 501;
-        letter-spacing: 3px;
       }
-      &:hover {
-        background-color: #121212;
+      .wrapper__buttons {
+        margin: 3rem auto;
+      }
+      .wrapper__button {
+        background-color: #242424;
+        padding: 1.3rem 4.5rem;
+        font-size: 2rem;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
+        cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
         transition: 0.2s;
+        &--text {
+          color: #e8e8e8;
+          font-weight: 501;
+          letter-spacing: 3px;
+        }
+        &:hover {
+          background-color: #121212;
+          transition: 0.2s;
+        }
       }
     }
   }
-} // .wrapper END
+} // Desktop .wrapper END
+
+
+
+
+
+
+
+
+//Mobile Wrapper
+@media (max-width: 1024px) {
+  .wrapper {
+    color: $accent-light;
+    height: 100%;
+    width:100%;
+    text-transform: uppercase;
+    font-family: 'Metric-Web';
+    cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/main/colorlogo.png),auto;
+    a {
+      cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
+    }
+   #subtitle {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      font-weight: normal;
+      text-align: center;
+    }
+    #title {
+      color: #e8e8e8;
+      font-size: 5rem;
+      letter-spacing: 9px;
+      margin: 0 auto;
+      font-weight: 900;
+    }
+    .title--pipe {
+      color: #fa521a;
+      letter-spacing: -6px;
+      height: 4.4rem;
+      overflow: hidden;
+      display: inline-block;
+      margin: auto 0.8rem;
+    }
+    .logo_wrapper {
+      margin: 0 auto;
+      .logo {
+        width: 75px;
+        height: 75px;
+        margin: 0 auto;
+      }
+    }
+    &__preview {
+      display: grid;
+      grid-template-columns: 3fr 8fr;
+      margin: 6rem 1rem;
+      &--litmus-info {
+        text-align: center;
+        grid-row: 1;
+        grid-column: 1/3;
+        color: #8b8b8b;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+      }
+    }
+    &__mailing,
+    &__mailings {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    &__left {
+      flex-direction: column;
+      padding: 1rem 2.5rem;
+      position: relative;
+      display: flex;
+      min-width: 100%;
+      margin: 0;
+      background-color: #4f4f4f;
+      justify-content: space-between;
+      &.index {
+        min-width: 350px;
+      }
+      &--greeting {
+        color: #e8e8e8;
+        letter-spacing: 2px;
+      }
+      &--titles {
+        margin: auto;
+        #subtitle {
+          text-align: left;
+          position: relative;
+          left: 1rem;
+        }
+      }
+      &--logo {
+        width: 75px;
+        height: 75px;
+        margin: 0 auto;
+      }
+      &--text,
+      &--text-special {
+        font-size: 4rem;
+        font-weight: lighter;
+        margin: 0;
+      }
+      &__header {
+        display: flex;
+        justify-content: space-evenly;
+        &--form {
+          align-self: center;
+        }
+        &--logout {
+          font-weight: bold;
+          cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
+          background-color: #242424;
+          padding: 0.75rem 1rem;
+          border: 0;
+          color: #e8e8e8;
+          text-transform: uppercase;
+          transition: 0.3s;
+          box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
+          &:hover {
+            background-color: #121212;
+          }
+        }
+      }
+      &--select {
+        border: 1px solid $accent-light;
+        padding: 1rem;
+        color: #e8e8e8;
+        position: relative;
+        bottom: 0.3rem;
+        margin: 1rem 0;
+        font-size: 1.65rem;
+        width: 17rem;
+        appearance: none;
+        background: url("../images/dropdown-arrow.png");
+        text-transform: uppercase;
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-origin: content-box;
+        cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
+  
+      }
+      &--input {
+        border: 1px solid $accent-light;
+        padding: 1rem;
+        background-color: transparent;
+        position: relative;
+        bottom: 0.3rem;
+        margin: 1rem 0;
+        width: 15rem;
+        text-transform: uppercase;
+        color: #e8e8e8;
+        font-size: 0.95em;
+        height: 2em;
+        
+      }
+      &--button {
+        border: 3px solid transparent;
+        padding: 1rem;
+        background-color: #DAA20C;
+        color: #e8e8e8;
+        position: relative;
+        bottom: 0.3rem;
+        margin: 1rem 0;
+        font-size: 1.25rem;
+        width: 17rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
+        &:hover {
+          border: 3px solid #fff;
+          transition: 0.5s;
+          color: #fff;
+          background-color: #121212;
+        }
+      }
+      .addDelButtonWrapper {
+        display: flex;
+        justify-content: right;
+        &--info {
+          margin: auto 0.5rem;
+          color: #8b8b8b;
+          font-size: 0.7rem;
+          letter-spacing: 3px;
+        }
+      }
+      &--addDelButtons {
+        height: 1rem;
+        text-align: center;
+        display: inline-block;
+        font-size: 1.8rem;
+        cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
+        line-height: 0;
+        padding: 0.8rem 0.4rem 1rem;
+        margin: 0.25rem 0.25rem;
+        background-color: transparent;
+        border: 1px solid #e8e8e8;
+        color: #e8e8e8;
+        transition: 0.2s;
+        &:hover {
+          color: #fa5119;
+          transition: 0.2s;
+          border-color: #fa5119;
+        }
+      }
+    } //  Mobile .wrapper__left END
+    &__right {
+      display: flex;
+      background: #242424;
+      flex-direction: column;
+      position: relative;
+      overflow: auto;
+      min-width: 100%;
+      margin:0;
+      padding: 1rem 2.5rem;
+      &--button {
+        margin: 1.5rem;
+        padding: 7rem 12rem;
+        background-color: #121212;
+        color: #121212;
+        text-align: center;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: bold;
+        border: 4px solid transparent;
+        transition: 0.5s;
+        filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.25));
+        &:hover {
+          background-color: #757575;
+          transition: 0.5s;
+        }
+      }
+      &--buttons {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+      }
+      &--titles {
+        margin: auto;
+        #subtitle {
+          text-align: left;
+          position: relative;
+          left: 1rem;
+        }
+      }
+      &--text {
+        font-size: 2rem;
+        margin: 0;
+        color:#2E95CC;
+        @font-face {
+          font-family: 'Metric-Web';
+          src: url('https://coc-email-template.s3.us-east-2.amazonaws.com/font/MetricWeb-Bold.woff') format('woff');
+          font-weight: bold;
+          font-style: normal;
+        }
+      }
+      &--date {
+        font-size: 1.5rem;
+        margin: 0;
+        color:#F33A15;
+      }
+      &--tags {
+        font-size: 1rem;
+        margin: 0;
+        padding: .3rem;
+
+
+      }
+      &--info {
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom:0%;
+        color:#121212;
+        background-color: #fff;
+        padding: .5rem;
+        font-size:1rem;
+      
+      }
+      &--box {
+        padding: 3rem;
+        background-color:#fff;
+        text-align: center;
+        margin: 1rem;
+        border-radius: .5rem;
+        &:hover {
+          background-color: #121212;
+          color:#fff;
+        }
+  
+      }
+      &--container {
+        width: 70%;
+        margin: 15%;
+        background-color: rgba(62,62,62,0.7);
+      }
+      &--pagenav {
+        padding: 1rem;
+        background-color:#DAA20C;
+        color:#121212;
+        margin: 2rem;
+        &:hover {
+          background-color: #121212;
+          color:#fff;
+        }
+      }
+      .email-login {
+        visibility: hidden;
+        width: 1px;
+        font-size: 1px;
+      }
+    } // Mobile .wrapper__right END
+    &__mailing {
+      grid-template-columns: 6fr 4fr;
+      background-color: #DAA20C;
+      .wrapper__left {
+        max-height: 100vh;
+        overflow: auto;
+      }
+      & .wrapper__left form p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem 0;
+      }
+    } // Mobile .wrapper__mailing END
+    &__mailings {
+      grid-template-columns: 4fr 7fr;
+      background-color: #4f4f4f;
+      & .wrapper__right {
+        max-height: 100vh;
+        background: linear-gradient(to left bottom, #DAA20C, #F33A15, #AD1A1A,#2E95CC);
+      }
+      & .wrapper__left {
+        background-color: #4f4f4f;
+      }
+    }
+    &.home {
+      background-color: #4f4f4f;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      justify-content: space-around;
+      padding: 4rem 0 18rem;
+      box-sizing: border-box;
+      .wrapper--titles {
+        margin: 6rem auto;
+        line-height: 1.2;
+        color: #e8e8e8;
+      }
+      .wrapper__buttons {
+        margin: 3rem auto;
+      }
+      .wrapper__button {
+        background-color: #242424;
+        padding: 1.3rem 4.5rem;
+        font-size: 2rem;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
+        cursor: url(https://raw.githubusercontent.com/tiana-horn/coding_challenge_1/95c46fd0694f13dd789fb47640db1f2abf26f26b/pointer.png),auto;
+        transition: 0.2s;
+        &--text {
+          color: #e8e8e8;
+          font-weight: 501;
+          letter-spacing: 3px;
+        }
+        &:hover {
+          background-color: #121212;
+          transition: 0.2s;
+        }
+      }
+    }
+  } // Mobile .wrapper END
+}
