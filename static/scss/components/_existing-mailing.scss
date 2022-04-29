@@ -15,16 +15,12 @@
   }
   &--title {
     color: #e8e8e8;
-    text-decoration: underline;
     font-weight: 401;
-    &:hover {
-      color: #b4b4b4;
-      transition: 0.2s;
-    }
   }
   &--date {
     font-weight: lighter;
     letter-spacing: 0.15rem;
+    opacity: 0.5;
   }
   &--tags {
     display: flex;
@@ -32,6 +28,7 @@
     font-weight: bold;
     background-color: #242424;
     padding: 0.4rem 0;
+    list-style-type: none;
     &-owner {
       color: #f9594d;
     }
@@ -78,4 +75,30 @@
 
 #ak-mailer-link:hover {
   color: #121212;
+}
+
+.mail-column {
+  float: left;
+  width: 50%;
+  &--right {
+    text-align: right;
+  }
+}
+
+.mail-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.mail-edit-link {
+  color: #e8e8e8;
+  font-size: 1rem;
+  transition: 0.2s;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-bottom: 1px solid #fa5319;
+    transition: 0.2s;
+    color: #fa5319;
+  }
 }

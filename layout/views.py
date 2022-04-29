@@ -74,6 +74,12 @@ def mailings(request, mailing_id=None):
         # render expects a request, path to an HTML file and a context dictonary
         # You can pass extra content into the context variable, which can then be used in the template (selct-mailing.html)
 
+        mailings = Mailing.objects.all()
+        mailings_paginator = Paginator(mailings, 10)
+        current_page_number = request.GET.get('page')
+        mailings_obj = mailings_paginator.get_page(current_page_number)
+        
+        context['mailings_obj'] = mailings_obj
         # No changes should be required past here.
         return render(request, 'layout/pages/select-mailing.html', context)
 
